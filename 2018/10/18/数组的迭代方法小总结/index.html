@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="博客搭建," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,18 +79,17 @@
 
 
 
-<meta name="description" content="文档节点 文档节点是每个文档的根节点，文档节点只有一个子节点，即元素，成为文档元素。   nodeType : 9 nodeName : “#document”  元素节点 nodeType : 1 nodeName : DIV SPAN P  nodeValue : null  文本节点 nodeType : 3 nodeName : #text nodeVale : 文本的值  hasChil">
-<meta name="keywords" content="博客搭建">
+<meta name="description" content="有没有觉得有一些方法功能类似，每次见到都是看起来眼熟，一时间想不具体，那么不妨试着给他们分分类。想下面这个样子，是不是会好一些呢~  相同点： 每个方法都接受两个参数：要在每一项上运行的函数和运行该函数的作用域对象。 不会对原数组进行改变  不同点： 返回值不同返回值是true或falsesome() 对数组的每一项运行指定函数，如果有一项返回true则返回true 123var arr = [">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端面试题总结——js篇之DOM">
-<meta property="og:url" content="http://yoursite.com/2018/09/10/前端面试题总结——js篇之DOM/index.html">
+<meta property="og:title" content="数组的迭代方法小总结">
+<meta property="og:url" content="http://yoursite.com/2018/10/18/数组的迭代方法小总结/index.html">
 <meta property="og:site_name" content="罗小怡儿的博客">
-<meta property="og:description" content="文档节点 文档节点是每个文档的根节点，文档节点只有一个子节点，即元素，成为文档元素。   nodeType : 9 nodeName : “#document”  元素节点 nodeType : 1 nodeName : DIV SPAN P  nodeValue : null  文本节点 nodeType : 3 nodeName : #text nodeVale : 文本的值  hasChil">
+<meta property="og:description" content="有没有觉得有一些方法功能类似，每次见到都是看起来眼熟，一时间想不具体，那么不妨试着给他们分分类。想下面这个样子，是不是会好一些呢~  相同点： 每个方法都接受两个参数：要在每一项上运行的函数和运行该函数的作用域对象。 不会对原数组进行改变  不同点： 返回值不同返回值是true或falsesome() 对数组的每一项运行指定函数，如果有一项返回true则返回true 123var arr = [">
 <meta property="og:locale" content="中文">
-<meta property="og:updated_time" content="2018-09-11T09:15:20.000Z">
+<meta property="og:updated_time" content="2018-10-18T11:28:55.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端面试题总结——js篇之DOM">
-<meta name="twitter:description" content="文档节点 文档节点是每个文档的根节点，文档节点只有一个子节点，即元素，成为文档元素。   nodeType : 9 nodeName : “#document”  元素节点 nodeType : 1 nodeName : DIV SPAN P  nodeValue : null  文本节点 nodeType : 3 nodeName : #text nodeVale : 文本的值  hasChil">
+<meta name="twitter:title" content="数组的迭代方法小总结">
+<meta name="twitter:description" content="有没有觉得有一些方法功能类似，每次见到都是看起来眼熟，一时间想不具体，那么不妨试着给他们分分类。想下面这个样子，是不是会好一些呢~  相同点： 每个方法都接受两个参数：要在每一项上运行的函数和运行该函数的作用域对象。 不会对原数组进行改变  不同点： 返回值不同返回值是true或falsesome() 对数组的每一项运行指定函数，如果有一项返回true则返回true 123var arr = [">
 
 
 
@@ -120,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/10/前端面试题总结——js篇之DOM/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/18/数组的迭代方法小总结/"/>
 
 
 
 
 
-  <title>前端面试题总结——js篇之DOM | 罗小怡儿的博客</title>
+  <title>数组的迭代方法小总结 | 罗小怡儿的博客</title>
   
 
 
@@ -233,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/10/前端面试题总结——js篇之DOM/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/18/数组的迭代方法小总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Luoxiaoyier~">
@@ -250,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">前端面试题总结——js篇之DOM</h1>
+          <h1 class="post-title" itemprop="name headline">数组的迭代方法小总结</h1>
         
 
         <div class="post-meta">
@@ -262,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-10T12:04:25+08:00">
-                2018-09-10
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-18T19:26:44+08:00">
+                2018-10-18
               </time>
             
 
@@ -300,56 +299,31 @@
       
 
       
-        <h3 id="文档节点"><a href="#文档节点" class="headerlink" title="文档节点"></a>文档节点</h3><blockquote>
-<p>文档节点是每个文档的根节点，文档节点只有一个子节点，即<html>元素，成为文档元素。</html></p>
+        <blockquote>
+<p>有没有觉得有一些方法功能类似，每次见到都是看起来眼熟，一时间想不具体，那么不妨试着给他们分分类。想下面这个样子，是不是会好一些呢~</p>
 </blockquote>
-<ul>
-<li>nodeType : 9</li>
-<li>nodeName : “#document”</li>
+<h3 id="相同点："><a href="#相同点：" class="headerlink" title="相同点："></a>相同点：</h3><ul>
+<li>每个方法都接受两个参数：要在每一项上运行的函数和运行该函数的作用域对象。</li>
+<li>不会对原数组进行改变</li>
 </ul>
-<h3 id="元素节点"><a href="#元素节点" class="headerlink" title="元素节点"></a>元素节点</h3><ul>
-<li>nodeType : 1</li>
-<li>nodeName : DIV SPAN P </li>
-<li>nodeValue : null</li>
+<h3 id="不同点："><a href="#不同点：" class="headerlink" title="不同点："></a>不同点：</h3><ul>
+<li>返回值不同<h4 id="返回值是true或false"><a href="#返回值是true或false" class="headerlink" title="返回值是true或false"></a>返回值是true或false</h4><h5 id="some"><a href="#some" class="headerlink" title="some()"></a>some()</h5><blockquote>
+<p>对数组的每一项运行指定函数，如果有一项返回true则返回true</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1,2,3,4]</span><br><span class="line">var returnValue = arr.some(item=&gt;item&gt;2)</span><br><span class="line">console.log(returnValue) //true</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
 </ul>
-<h3 id="文本节点"><a href="#文本节点" class="headerlink" title="文本节点"></a>文本节点</h3><ul>
-<li>nodeType : 3</li>
-<li>nodeName : #text</li>
-<li>nodeVale : 文本的值</li>
-</ul>
-<h4 id="hasChildNodes"><a href="#hasChildNodes" class="headerlink" title="hasChildNodes"></a>hasChildNodes</h4><blockquote>
-<p>在节点包含一个或多个节点的情况下返回true</p>
+<h5 id="every"><a href="#every" class="headerlink" title="every()"></a>every()</h5><blockquote>
+<p>对数组的每一项运行指定函数，如果每一项都返回true则返回true<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1,2,3,4]</span><br><span class="line">var returnValue = arr.every(item=&gt;item&gt;2)</span><br><span class="line">console.log(returnValue) //false</span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<h4 id="childeNodes"><a href="#childeNodes" class="headerlink" title="childeNodes"></a>childeNodes</h4><ul>
-<li>nodeList</li>
-<li>nodeList[0] &lt;=&gt; nodeList.item(0)</li>
-</ul>
-<h4 id="previousSibling"><a href="#previousSibling" class="headerlink" title="previousSibling"></a>previousSibling</h4><blockquote>
-<p>第一个节点的previousSibling属性值为null</p>
+<h4 id="返回一个新数组"><a href="#返回一个新数组" class="headerlink" title="返回一个新数组"></a>返回一个新数组</h4><h5 id="filter"><a href="#filter" class="headerlink" title="filter()"></a>filter()</h5><blockquote>
+<p>返回一个符合条件的数组<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1,2,3,4]</span><br><span class="line">var returnArr = arr.filter(item=&gt;item&gt;2)</span><br><span class="line">console.log(returnValue) //[3,4]</span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<h4 id="nextSibling"><a href="#nextSibling" class="headerlink" title="nextSibling"></a>nextSibling</h4><blockquote>
-<p>最后一个节点的nextSibling属性为null</p>
+<h5 id="map"><a href="#map" class="headerlink" title="map()"></a>map()</h5><blockquote>
+<p>返回一个每一项都是在原始数组的基础上做了对应操作的数组<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1,2,3,4]</span><br><span class="line">var returnArr = arr.map(itme=&gt;item*2)</span><br><span class="line">console.log(returnArr) //[2,4,6,8]</span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<h4 id="类数组对象"><a href="#类数组对象" class="headerlink" title="类数组对象"></a>类数组对象</h4><h4 id="firstChild"><a href="#firstChild" class="headerlink" title="firstChild"></a>firstChild</h4><blockquote>
-<p>nodeList[0]</p>
-</blockquote>
-<h4 id="lastChild"><a href="#lastChild" class="headerlink" title="lastChild"></a>lastChild</h4><blockquote>
-<p>nodeList[nodeList.length-1]</p>
-</blockquote>
-<h4 id="将类数组对象转化为数组对象的方法"><a href="#将类数组对象转化为数组对象的方法" class="headerlink" title="将类数组对象转化为数组对象的方法"></a>将类数组对象转化为数组对象的方法</h4><h4 id="appendChild"><a href="#appendChild" class="headerlink" title="appendChild()"></a>appendChild()</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var returnedNode = someNode.appendChild(newNode)</span><br><span class="line">returnedNode = newNode //true</span><br><span class="line">someNode.lastChild === newNode //true</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>如果传入到appendChild()中的节点已经是文档的一部分了，那么该节点从原来的位置转移到新位置。</p>
-</blockquote>
-<h4 id="insertBefore-newNode-null-someNode"><a href="#insertBefore-newNode-null-someNode" class="headerlink" title="insertBefore(newNode,null/someNode)"></a>insertBefore(newNode,null/someNode)</h4><blockquote>
-<p>insertBefore(newNoed,null)&lt;=&gt;appendChild()</p>
-</blockquote>
-<h4 id="replaceChild-newNode-oldNode"><a href="#replaceChild-newNode-oldNode" class="headerlink" title="replaceChild(newNode,oldNode)"></a>replaceChild(newNode,oldNode)</h4><blockquote>
-<p>返回被替换的节点，从技术上讲，被替换的节点仍然还在文档中，但它在文档中已经没有了自己的位置。</p>
-</blockquote>
-<h4 id="removeChild"><a href="#removeChild" class="headerlink" title="removeChild()"></a>removeChild()</h4><h4 id="cloneNode"><a href="#cloneNode" class="headerlink" title="cloneNode()"></a>cloneNode()</h4><blockquote>
-<p>true =&gt; 深复制<br>false =&gt; 浅复制</p>
-</blockquote>
-<h4 id="normalize"><a href="#normalize" class="headerlink" title="normalize()"></a>normalize()</h4><h3 id="深拷贝和浅拷贝"><a href="#深拷贝和浅拷贝" class="headerlink" title="深拷贝和浅拷贝"></a>深拷贝和浅拷贝</h3>
+<h4 id="没有返回值"><a href="#没有返回值" class="headerlink" title="没有返回值"></a>没有返回值</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1,2,3,4]</span><br><span class="line">var returnArr = arr.forEach(function()&#123;</span><br><span class="line">    //做一些操作</span><br><span class="line">&#125;)</span><br><span class="line">console.log(returnArr) //undefined</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -364,12 +338,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/博客搭建/" rel="tag"># 博客搭建</a>
-          
-        </div>
-      
 
       
       
@@ -379,8 +347,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/10/前端面试题总结——css篇/" rel="next" title="">
-                <i class="fa fa-chevron-left"></i> 
+              <a href="/2018/10/17/ES6基础知识篇/" rel="next" title="ES6基础知识篇">
+                <i class="fa fa-chevron-left"></i> ES6基础知识篇
               </a>
             
           </div>
@@ -388,10 +356,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/17/ES6基础知识篇/" rel="prev" title="ES6基础知识篇">
-                ES6基础知识篇 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -523,7 +487,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#文档节点"><span class="nav-number">1.</span> <span class="nav-text">文档节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#元素节点"><span class="nav-number">2.</span> <span class="nav-text">元素节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文本节点"><span class="nav-number">3.</span> <span class="nav-text">文本节点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#hasChildNodes"><span class="nav-number">3.1.</span> <span class="nav-text">hasChildNodes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#childeNodes"><span class="nav-number">3.2.</span> <span class="nav-text">childeNodes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#previousSibling"><span class="nav-number">3.3.</span> <span class="nav-text">previousSibling</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nextSibling"><span class="nav-number">3.4.</span> <span class="nav-text">nextSibling</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类数组对象"><span class="nav-number">3.5.</span> <span class="nav-text">类数组对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#firstChild"><span class="nav-number">3.6.</span> <span class="nav-text">firstChild</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lastChild"><span class="nav-number">3.7.</span> <span class="nav-text">lastChild</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将类数组对象转化为数组对象的方法"><span class="nav-number">3.8.</span> <span class="nav-text">将类数组对象转化为数组对象的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#appendChild"><span class="nav-number">3.9.</span> <span class="nav-text">appendChild()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#insertBefore-newNode-null-someNode"><span class="nav-number">3.10.</span> <span class="nav-text">insertBefore(newNode,null/someNode)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#replaceChild-newNode-oldNode"><span class="nav-number">3.11.</span> <span class="nav-text">replaceChild(newNode,oldNode)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#removeChild"><span class="nav-number">3.12.</span> <span class="nav-text">removeChild()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cloneNode"><span class="nav-number">3.13.</span> <span class="nav-text">cloneNode()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#normalize"><span class="nav-number">3.14.</span> <span class="nav-text">normalize()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#深拷贝和浅拷贝"><span class="nav-number">4.</span> <span class="nav-text">深拷贝和浅拷贝</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#相同点："><span class="nav-number">1.</span> <span class="nav-text">相同点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不同点："><span class="nav-number">2.</span> <span class="nav-text">不同点：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#返回值是true或false"><span class="nav-number">2.1.</span> <span class="nav-text">返回值是true或false</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#some"><span class="nav-number">2.1.1.</span> <span class="nav-text">some()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#every"><span class="nav-number">2.1.2.</span> <span class="nav-text">every()</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#返回一个新数组"><span class="nav-number">2.2.</span> <span class="nav-text">返回一个新数组</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#filter"><span class="nav-number">2.2.1.</span> <span class="nav-text">filter()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#map"><span class="nav-number">2.2.2.</span> <span class="nav-text">map()</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#没有返回值"><span class="nav-number">2.3.</span> <span class="nav-text">没有返回值</span></a></li></ol></li></ol></div>
             
 
           </div>
