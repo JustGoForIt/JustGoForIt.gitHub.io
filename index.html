@@ -310,7 +310,10 @@
 <li>每个方法都接受两个参数：要在每一项上运行的函数和运行该函数的作用域对象。</li>
 <li>不会对原数组进行改变</li>
 </ul>
-<h2 id="不同点："><a href="#不同点：" class="headerlink" title="不同点："></a>不同点：</h2><h3 id="返回值不同"><a href="#返回值不同" class="headerlink" title="返回值不同"></a>返回值不同</h3><h4 id="返回值是true或false"><a href="#返回值是true或false" class="headerlink" title="返回值是true或false"></a>返回值是true或false</h4><h5 id="some"><a href="#some" class="headerlink" title="some()"></a>some()</h5><blockquote>
+<h2 id="不同点："><a href="#不同点：" class="headerlink" title="不同点："></a>不同点：</h2><ul>
+<li>返回值不同</li>
+</ul>
+<h4 id="返回值是true或false"><a href="#返回值是true或false" class="headerlink" title="返回值是true或false"></a>返回值是true或false</h4><h5 id="some"><a href="#some" class="headerlink" title="some()"></a>some()</h5><blockquote>
 <p>对数组的每一项运行指定函数，如果有一项返回true则返回true</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1,2,3,4]</span><br><span class="line">var returnValue = arr.some(item=&gt;item&gt;2)</span><br><span class="line">console.log(returnValue) //true</span><br></pre></td></tr></table></figure>
