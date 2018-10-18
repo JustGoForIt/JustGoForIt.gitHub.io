@@ -304,7 +304,7 @@
         
           
             <blockquote>
-<p>有没有觉得有一些方法功能类似，每次见到都是看起来眼熟，一时间想不具体，那么不妨试着给他们分分类。想下面这个样子，是不是会好一些呢~</p>
+<p>有没有觉得有一些方法功能类似，每次见到都是看起来眼熟，一时间想不具体，那么不妨试着给他们分分类。像下面这个样子，是不是会好一些呢~</p>
 </blockquote>
 <h3 id="相同点："><a href="#相同点：" class="headerlink" title="相同点："></a>相同点：</h3><ul>
 <li>每个方法都接受两个参数：要在每一项上运行的函数和运行该函数的作用域对象。</li>
@@ -313,19 +313,22 @@
 <h3 id="不同点："><a href="#不同点：" class="headerlink" title="不同点："></a>不同点：</h3><ul>
 <li>返回值不同<h4 id="返回值是true或false"><a href="#返回值是true或false" class="headerlink" title="返回值是true或false"></a>返回值是true或false</h4><h5 id="some"><a href="#some" class="headerlink" title="some()"></a>some()</h5><blockquote>
 <p>对数组的每一项运行指定函数，如果有一项返回true则返回true</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1,2,3,4]</span><br><span class="line">var returnValue = arr.some(item=&gt;item&gt;2)</span><br><span class="line">console.log(returnValue) //true</span><br></pre></td></tr></table></figure>
 </blockquote>
 </li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1,2,3,4]</span><br><span class="line">var returnValue = arr.some(item=&gt;item&gt;2)</span><br><span class="line">console.log(returnValue) //true</span><br></pre></td></tr></table></figure>
 <h5 id="every"><a href="#every" class="headerlink" title="every()"></a>every()</h5><blockquote>
-<p>对数组的每一项运行指定函数，如果每一项都返回true则返回true<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1,2,3,4]</span><br><span class="line">var returnValue = arr.every(item=&gt;item&gt;2)</span><br><span class="line">console.log(returnValue) //false</span><br></pre></td></tr></table></figure></p>
+<p>对数组的每一项运行指定函数，如果每一项都返回true则返回true</p>
 </blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1,2,3,4]</span><br><span class="line">var returnValue = arr.every(item=&gt;item&gt;2)</span><br><span class="line">console.log(returnValue) //false</span><br></pre></td></tr></table></figure>
 <h4 id="返回一个新数组"><a href="#返回一个新数组" class="headerlink" title="返回一个新数组"></a>返回一个新数组</h4><h5 id="filter"><a href="#filter" class="headerlink" title="filter()"></a>filter()</h5><blockquote>
-<p>返回一个符合条件的数组<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1,2,3,4]</span><br><span class="line">var returnArr = arr.filter(item=&gt;item&gt;2)</span><br><span class="line">console.log(returnValue) //[3,4]</span><br></pre></td></tr></table></figure></p>
+<p>返回一个符合条件的数组</p>
 </blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1,2,3,4]</span><br><span class="line">var returnArr = arr.filter(item=&gt;item&gt;2)</span><br><span class="line">console.log(returnValue) //[3,4]</span><br></pre></td></tr></table></figure>
 <h5 id="map"><a href="#map" class="headerlink" title="map()"></a>map()</h5><blockquote>
-<p>返回一个每一项都是在原始数组的基础上做了对应操作的数组<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1,2,3,4]</span><br><span class="line">var returnArr = arr.map(itme=&gt;item*2)</span><br><span class="line">console.log(returnArr) //[2,4,6,8]</span><br></pre></td></tr></table></figure></p>
+<p>返回一个每一项都是在原始数组的基础上做了对应操作的数组</p>
 </blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1,2,3,4]</span><br><span class="line">var returnArr = arr.map(itme=&gt;item*2)</span><br><span class="line">console.log(returnArr) //[2,4,6,8]</span><br></pre></td></tr></table></figure>
 <h4 id="没有返回值"><a href="#没有返回值" class="headerlink" title="没有返回值"></a>没有返回值</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1,2,3,4]</span><br><span class="line">var returnArr = arr.forEach(function()&#123;</span><br><span class="line">    //做一些操作</span><br><span class="line">&#125;)</span><br><span class="line">console.log(returnArr) //undefined</span><br></pre></td></tr></table></figure>
 
           
