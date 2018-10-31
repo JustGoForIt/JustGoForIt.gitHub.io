@@ -232,6 +232,170 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/31/this/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Luoxiaoyier~">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="罗小怡儿的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/31/this/" itemprop="url">this</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-31T17:54:11+08:00">
+                2018-10-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="this"><a href="#this" class="headerlink" title="this"></a>this</h1><blockquote>
+<p>this参数的指向不仅是由定义函数的方式和位置决定的，同时还受函数调用方式的影响。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function foo(num)&#123;</span><br><span class="line">    console.log(&quot;foo:&quot; + num)</span><br><span class="line">    this.count++</span><br><span class="line">&#125;</span><br><span class="line">foo.count = 0</span><br><span class="line">foo(1)</span><br><span class="line">foo(2)</span><br><span class="line">foo(3)</span><br><span class="line">console.log(foo.count) //0 </span><br><span class="line">console.log(count) //NaN</span><br></pre></td></tr></table></figure>
+<h2 id="函数作为函数调用"><a href="#函数作为函数调用" class="headerlink" title="函数作为函数调用"></a>函数作为函数调用</h2><h3 id="严格模式下"><a href="#严格模式下" class="headerlink" title="严格模式下"></a>严格模式下</h3><ul>
+<li>this的值为undefined<h3 id="非严格模式下"><a href="#非严格模式下" class="headerlink" title="非严格模式下"></a>非严格模式下</h3></li>
+<li>this指向全局对象，浏览器中就是window</li>
+</ul>
+<h2 id="函数作为方法调用"><a href="#函数作为方法调用" class="headerlink" title="函数作为方法调用"></a>函数作为方法调用</h2><ul>
+<li><p>一般情况</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function foo()&#123;</span><br><span class="line">    console.log(this.a)</span><br><span class="line">&#125;</span><br><span class="line">obj = &#123;</span><br><span class="line">    a:2,</span><br><span class="line">    foo:foo</span><br><span class="line">&#125;</span><br><span class="line">obj.foo() //2</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>稍微复杂一点的引用丢失问题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function foo()&#123;</span><br><span class="line">    console.log(this.a)</span><br><span class="line">&#125;</span><br><span class="line">var obj = &#123;</span><br><span class="line">    a:2,</span><br><span class="line">    foo:foo</span><br><span class="line">&#125;</span><br><span class="line">var bar = obj.foo</span><br><span class="line">var a = &quot;real this&quot;</span><br><span class="line">bar() // &quot;real this&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>回调函数中引用丢失</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function foo()&#123;</span><br><span class="line">    console.log(this.a)</span><br><span class="line">&#125;</span><br><span class="line">function doFoo(fn)&#123;</span><br><span class="line">    // fn = 实参  相当于有这么语句</span><br><span class="line">    fn()</span><br><span class="line">&#125;</span><br><span class="line">var obj = &#123;</span><br><span class="line">    a:2,</span><br><span class="line">    foo:foo</span><br><span class="line">&#125;</span><br><span class="line">var a = &quot;amazing&quot;</span><br><span class="line">dooFoo(obj.foo)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>js内置函数中的回调</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function foo()&#123;</span><br><span class="line">    console.log(this.a)</span><br><span class="line">&#125;</span><br><span class="line">var obj = &#123;</span><br><span class="line">    a : 2,</span><br><span class="line">    foo : foo</span><br><span class="line">&#125;</span><br><span class="line">var a = &quot;A happy day&quot;</span><br><span class="line">setTimeout(obj.foo,100) // &quot;A happy day&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对象属性引用链中只有最后一层在调用位置中起作用</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function foo()&#123;</span><br><span class="line">    console.log(this.a)</span><br><span class="line">&#125;</span><br><span class="line">var obj2 = &#123;</span><br><span class="line">    a:42,</span><br><span class="line">    foo:foo</span><br><span class="line">&#125;</span><br><span class="line">var obj1= &#123;</span><br><span class="line">    a:2,</span><br><span class="line">    obj2:obj2</span><br><span class="line">&#125;</span><br><span class="line">obj1.obj2.foo() // 42</span><br></pre></td></tr></table></figure>
+<h2 id="显示绑定"><a href="#显示绑定" class="headerlink" title="显示绑定"></a>显示绑定</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function foo()&#123;</span><br><span class="line">    console.log(this.a)</span><br><span class="line">&#125;</span><br><span class="line">var obj = &#123;</span><br><span class="line">    a: 2</span><br><span class="line">&#125;</span><br><span class="line">foo.call(obj) //2</span><br></pre></td></tr></table></figure>
+<h4 id="利用显示绑定解决丢失绑定的问题"><a href="#利用显示绑定解决丢失绑定的问题" class="headerlink" title="利用显示绑定解决丢失绑定的问题"></a>利用显示绑定解决丢失绑定的问题</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var a = &quot;to do what you want&quot;</span><br><span class="line">function foo()&#123;</span><br><span class="line">    console.log(this.a)</span><br><span class="line">&#125;</span><br><span class="line">var obj = &#123;</span><br><span class="line">    a:2,</span><br><span class="line">&#125;</span><br><span class="line">var bar = function()&#123;</span><br><span class="line">    foo.call(obj)</span><br><span class="line">&#125;</span><br><span class="line">bar() //2</span><br><span class="line">setTimeout(bar,100) //2</span><br><span class="line">bar.call(window) // &quot;real this&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="函数作为构造函数调用"><a href="#函数作为构造函数调用" class="headerlink" title="函数作为构造函数调用"></a>函数作为构造函数调用</h2><h4 id="在作为构造函数调用的过程中"><a href="#在作为构造函数调用的过程中" class="headerlink" title="在作为构造函数调用的过程中"></a>在作为构造函数调用的过程中</h4><ol>
+<li>创建一个全新的对象</li>
+<li>这个新对象会被执行[[原型链接]] //还不太懂</li>
+<li>这个对象会被绑定到函数调用的this</li>
+<li>如果函数没有返回其他对象，那么new表达式中的函数调用会自动返回这个新对象</li>
+</ol>
+<h2 id="this绑定规则中的优先级"><a href="#this绑定规则中的优先级" class="headerlink" title="this绑定规则中的优先级"></a>this绑定规则中的优先级</h2><p>作为构造函数调用 &gt; call apply bind &gt; 作为对象方法调用 &gt; 作为方法调用</p>
+<h2 id="一些例外"><a href="#一些例外" class="headerlink" title="一些例外"></a>一些例外</h2><ol>
+<li>null、undefined作为this的绑定对象传入 apply、call、bind<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = 2</span><br><span class="line">foo()&#123;</span><br><span class="line">    console.log(this.a)</span><br><span class="line">&#125;</span><br><span class="line">foo.call(null) //2</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="例外的应用"><a href="#例外的应用" class="headerlink" title="例外的应用"></a>例外的应用</h3><ol>
+<li><p>数组展开</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function foo(a,b)&#123;</span><br><span class="line">    console.log(a);</span><br><span class="line">    console.log(b)</span><br><span class="line">&#125;</span><br><span class="line">foo.apply(null,[2,3])</span><br><span class="line">//2</span><br><span class="line">//3</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>柯里化 //不太懂</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function foo(a,b)&#123;</span><br><span class="line">    console.log(a);</span><br><span class="line">    console.log(b)</span><br><span class="line">&#125;</span><br><span class="line">var bar = foo.bind(null,2)</span><br><span class="line">bar(3)</span><br><span class="line">//2</span><br><span class="line">//3</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/29/String类型方法总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -570,7 +734,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var arr = []</span><br><span class="line">arr[0] = 1</span><br><span class="line">arr[2] = 2</span><br><span class="line">arr //[1, empty, 2]</span><br><span class="line">arr.length //3</span><br><span class="line">delete arr [0]</span><br><span class="line">arr //[empty × 2, 2]</span><br><span class="line">arr.length //3</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>数组的字符串键值不计算在数组长度内</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var newArr = [1,2,3]</span><br><span class="line">arr.length //3</span><br><span class="line">newArr[&apos;key&apos;] =12</span><br><span class="line">arr.key = 12</span><br><span class="line">arr.length //3</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var newArr = [1,2,3]</span><br><span class="line">newArr.length //3</span><br><span class="line">newArr[&apos;key&apos;] =12</span><br><span class="line">newArr.key = 12</span><br><span class="line">newArr.length //3</span><br><span class="line">newArr // [1, 2, 3, key: 12]</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>如果字符串键值能够被强制类型转换为十进制数字的话，会被当做数字处理。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var anotherArr = []</span><br><span class="line">anotherArr[&apos;12&apos;] = 12</span><br><span class="line">another.length  // 1</span><br></pre></td></tr></table></figure></li>
@@ -694,7 +858,22 @@
       
         
           
-            
+            <h2 id="arguments"><a href="#arguments" class="headerlink" title="arguments"></a>arguments</h2><h2 id="DOM查询返回的DOM元素列表"><a href="#DOM查询返回的DOM元素列表" class="headerlink" title="DOM查询返回的DOM元素列表"></a>DOM查询返回的DOM元素列表</h2><h2 id="将类数组对象转换为数组对象"><a href="#将类数组对象转换为数组对象" class="headerlink" title="将类数组对象转换为数组对象"></a>将类数组对象转换为数组对象</h2><h3 id="转换方法："><a href="#转换方法：" class="headerlink" title="转换方法："></a>转换方法：</h3><ul>
+<li>Array.prototype.slice.call()</li>
+<li><p>Array.prototype.slice.apply()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function trantoArr ()&#123;</span><br><span class="line">    var realArr = Array.prototype.slice.apply(arguments)</span><br><span class="line">    realArr.push(&apos;test&apos;)</span><br><span class="line">    return realArr</span><br><span class="line">&#125;</span><br><span class="line">trantoArr(&apos;foo&apos;,&apos;bar&apos;) //[&apos;foo&apos;,&apos;bar&apos;,&apos;test&apos;]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ES6 Array.from()</p>
+<blockquote>
+<p>只要有length属性的对象，都可以应用此方法转换成数组。</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function trantoArr ()&#123;</span><br><span class="line">    var realArr = Array.from(arguments)</span><br><span class="line">    realArr.push(&apos;test&apos;)</span><br><span class="line">    return realArr</span><br><span class="line">&#125;</span><br><span class="line">trantoArr(&apos;foo&apos;,&apos;bar&apos;) //[&apos;foo&apos;,&apos;bar&apos;,&apos;test&apos;]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>$.makeArray()<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function trantoArr ()&#123;</span><br><span class="line">    var realArr = $.makeArray(arguments)</span><br><span class="line">    realArr.push(&apos;test&apos;)</span><br><span class="line">    return realArr</span><br><span class="line">&#125;</span><br><span class="line">trantoArr(&apos;foo&apos;,&apos;bar&apos;) //[&apos;foo&apos;,&apos;bar&apos;,&apos;test&apos;]</span><br></pre></td></tr></table></figure></li>
+</ul>
+
           
         
       
@@ -1457,156 +1636,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/31/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Luoxiaoyier~">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="罗小怡儿的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/31/hello-world/" itemprop="url">再次开始</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-31T19:02:11+08:00">
-                2018-08-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/代码/" itemprop="url" rel="index">
-                    <span itemprop="name">代码</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>上一次经营这个博客还是大三的时候，那个时候，开始一边学习一边总结，后来一边总结一边找实习，说着说着想起来那段日子，还有一些温暖，但我并不怀念，因为我不怎么喜欢怀念过去，而是更加期许未来。</p>
-</blockquote>
-<blockquote>
-<p>找到实习之后，开始了我的工作生涯。工作第一年，有一些吃力的，新的概念，新的业务，每天应接不暇，甚至有时候有点手忙脚乱。</p>
-</blockquote>
-<blockquote>
-<p>第二年，可以应对自如，开始有空隙的时间静下来思考，怎么把碎片的时间，学到的碎片的知识汇总起来，形成完善的知识结构。于是，我开始重拾之前用hexo搭建的博客。</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1657,7 +1686,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
