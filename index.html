@@ -232,6 +232,457 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/23/CSS中的动画/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Luoxiaoyier~">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="罗小怡儿的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/23/CSS中的动画/" itemprop="url">CSS中的动画</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-23T11:46:59+08:00">
+                2018-11-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="CSS中动画的类型"><a href="#CSS中动画的类型" class="headerlink" title="CSS中动画的类型"></a>CSS中动画的类型</h2><ol>
+<li>transition补间动画：从一个状态切换到另一个状态</li>
+<li>keyframe关键帧动画：可以设置多个关键帧</li>
+<li>逐帧动画：逐帧切换</li>
+</ol>
+<h3 id="transition"><a href="#transition" class="headerlink" title="transition"></a>transition</h3><ol>
+<li>transition-property:指定动态变化的CSS属性【all】</li>
+<li>transition-duration:指定完成过渡所需的时间</li>
+<li>transition-timing-function:指定过渡函数</li>
+</ol>
+<ul>
+<li>ease/linear/ease-in/ease-out/ease-in-out</li>
+</ul>
+<ol start="4">
+<li>transition-dely:指定开始出现的延迟时间<blockquote>
+<p>合并的时候,第一个时间代表动画时间，第二个时间代表延迟时间。</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="keyframes"><a href="#keyframes" class="headerlink" title="keyframes"></a>keyframes</h3><blockquote>
+<p>keyframes中的百分比代表时间</p>
+</blockquote>
+<ol>
+<li>animation-direction: reverse</li>
+<li>animation-duration:</li>
+<li>animation-name:</li>
+<li>animation-delay:</li>
+<li>animation-interation-count:动画播放次数【infinite代表无线循环】</li>
+<li>animation-timing-function:</li>
+<li>animation-fill-mode:保持在哪里 </li>
+<li>animation-play-state:设置动画的播放状态running/paused</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">@keyframes changeColor&#123;</span><br><span class="line">    0%&#123;</span><br><span class="line">        background:red;</span><br><span class="line">    &#125;</span><br><span class="line">    100%&#123;</span><br><span class="line">        background:green;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">等价于</span><br><span class="line">@keyframes changeColor&#123;</span><br><span class="line">    from &#123;</span><br><span class="line">        background:red;</span><br><span class="line">    &#125;</span><br><span class="line">    to &#123;</span><br><span class="line">        background:green;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">div:hover&#123;</span><br><span class="line">    animation: changeColor 5s ease 0.1s</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="逐帧动画"><a href="#逐帧动画" class="headerlink" title="逐帧动画"></a>逐帧动画</h3><blockquote>
+<p>keyframes的特殊形式</p>
+</blockquote>
+<p>1.使用逐帧动画是因为无法计算补间动画。比如实现一个猎豹奔跑的动画。</p>
+<ol start="2">
+<li>实现方式： animation-timing-function: steps(1)</li>
+</ol>
+<h3 id="Chrome的动画面板"><a href="#Chrome的动画面板" class="headerlink" title="Chrome的动画面板"></a>Chrome的动画面板</h3><blockquote>
+<p>与控制台在同一个地方，如果没有点击三个小点，选择Animations</p>
+</blockquote>
+<h3 id="动画曲线"><a href="#动画曲线" class="headerlink" title="动画曲线"></a>动画曲线</h3><blockquote>
+<p>可以在网上定制想要的任何曲线</p>
+</blockquote>
+<h3 id="transform"><a href="#transform" class="headerlink" title="transform"></a>transform</h3><h3 id="考点"><a href="#考点" class="headerlink" title="考点"></a>考点</h3><ol>
+<li>css实现动画的方式有几种:过渡动画和关键帧动画<br>2、过渡动画和关键帧动画的区别</li>
+</ol>
+<ul>
+<li>过渡动画需要状态变化</li>
+<li>关键帧动画不需要状态变化</li>
+<li>关键帧动画能控制更精细</li>
+</ul>
+<ol start="3">
+<li>如何实现逐帧动画</li>
+</ol>
+<ul>
+<li>使用关键帧动画</li>
+<li>去掉补间（steps）</li>
+</ul>
+<ol start="4">
+<li>CSS动画的性能</li>
+</ol>
+<ul>
+<li>性能不坏</li>
+<li>部分情况下优于JS</li>
+<li>但JS可以做到更好</li>
+<li>部分高危属性：box-shadow,无论是用css实现还是JS实现，性能都不是很好。</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/15/flex布局/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Luoxiaoyier~">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="罗小怡儿的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/15/flex布局/" itemprop="url">flex布局</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-15T23:57:55+08:00">
+                2018-11-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="flex-container"><a href="#flex-container" class="headerlink" title="flex container"></a>flex container</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">display:flex;</span><br><span class="line">//主轴方向</span><br><span class="line">flex-direction:row; //默认值 主轴方向 左——&gt;右 </span><br><span class="line">flex-direction:column; //主轴方向 上——&gt;下</span><br><span class="line">flex-direction:row-reverse; //主轴方向 右——&gt;左</span><br><span class="line">flex-direction:column-reverse; //主轴方向 下——&gt;上</span><br><span class="line">//主轴的对齐方式</span><br><span class="line">justify-content:flex-start/flex-end/center/space-betten(平均分布)/space-around(左右两边等距分布)</span><br><span class="line">//交叉轴的对齐方式</span><br><span class="line">align-items:flex-start/flex-end/center/stretch[在没有设置高度的时候，在交叉轴上占满]/baceline</span><br><span class="line">//换行</span><br><span class="line">flex-wrap:no-wrap/wrap/</span><br></pre></td></tr></table></figure>
+<h4 id="row-reverse会靠右对齐，而column-reverse不会靠下对齐的原因"><a href="#row-reverse会靠右对齐，而column-reverse不会靠下对齐的原因" class="headerlink" title="row-reverse会靠右对齐，而column-reverse不会靠下对齐的原因"></a>row-reverse会靠右对齐，而column-reverse不会靠下对齐的原因</h4><blockquote>
+<p>因为整个容器的高度和包含内容块的高度一致，而横向上总宽度是大于包含块的宽度的。</p>
+</blockquote>
+<h3 id="flex-item"><a href="#flex-item" class="headerlink" title="flex item"></a>flex item</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/09/a/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Luoxiaoyier~">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="罗小怡儿的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/09/a/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-09T14:54:54+08:00">
+                2018-11-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+	function reversefn (a){
+    	var stringa = a+'';
+        var stringb = ''
+    	for(var i = stringa.length-1;i>=0;i--){
+       		stringb+=stringa[i]
+    	}
+        console.log(parseInt(stringb))
+        
+	}
+	reversefn(0)
+	</script>
+</body>
+</html>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/31/this/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1236,438 +1687,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/17/ES6基础知识篇/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Luoxiaoyier~">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="罗小怡儿的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/17/ES6基础知识篇/" itemprop="url">ES6基础知识篇</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-17T20:37:46+08:00">
-                2018-10-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="let"><a href="#let" class="headerlink" title="let"></a>let</h3><blockquote>
-<p>创建块级作用域</p>
-</blockquote>
-<ul>
-<li>for循环的计数器，很适合使用let命令</li>
-<li>for循环中，设置循环变量的那部分是一个父作用域，而循环体内部是一个单独的子作用域。</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">for(let i = 0;i &lt; 3;i++)&#123;</span><br><span class="line">   let i = &apos;abc&apos;;</span><br><span class="line">   console.log(i)</span><br><span class="line">&#125;</span><br><span class="line">// abc</span><br><span class="line">// abc</span><br><span class="line">// abc</span><br></pre></td></tr></table></figure>
-<ul>
-<li>let所声明的变量一定要在声明后使用，否则会报错</li>
-<li>暂时性死区TDZ(temporal dead zone)</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var tmp = 123;</span><br><span class="line">if(true)&#123;</span><br><span class="line">    tmp = &apos;abc&apos;; // ReferenceError</span><br><span class="line">    let tmp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>TDZ意味着typeof不再是一个百分之百安全的操作</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">typeof x //ReferenceError</span><br><span class="line">let x</span><br></pre></td></tr></table></figure>
-<ul>
-<li>不允许重复声明</li>
-</ul>
-<h3 id="const"><a href="#const" class="headerlink" title="const"></a>const</h3><blockquote>
-<p>一旦定义以后不可以修改，不过如果是引用类型的，那么是可以改变它的属性的</p>
-</blockquote>
-<h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><blockquote>
-<p>箭头函数永远都是匿名的</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/10/前端面试题总结——js篇之DOM/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Luoxiaoyier~">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="罗小怡儿的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/10/前端面试题总结——js篇之DOM/" itemprop="url">前端面试题总结——js篇之DOM</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-10T12:04:25+08:00">
-                2018-09-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="文档节点"><a href="#文档节点" class="headerlink" title="文档节点"></a>文档节点</h3><blockquote>
-<p>文档节点是每个文档的根节点，文档节点只有一个子节点，即<html>元素，成为文档元素。</html></p>
-</blockquote>
-<ul>
-<li>nodeType : 9</li>
-<li>nodeName : “#document”</li>
-</ul>
-<h3 id="元素节点"><a href="#元素节点" class="headerlink" title="元素节点"></a>元素节点</h3><ul>
-<li>nodeType : 1</li>
-<li>nodeName : DIV SPAN P </li>
-<li>nodeValue : null</li>
-</ul>
-<h3 id="文本节点"><a href="#文本节点" class="headerlink" title="文本节点"></a>文本节点</h3><ul>
-<li>nodeType : 3</li>
-<li>nodeName : #text</li>
-<li>nodeVale : 文本的值</li>
-</ul>
-<h4 id="hasChildNodes"><a href="#hasChildNodes" class="headerlink" title="hasChildNodes"></a>hasChildNodes</h4><blockquote>
-<p>在节点包含一个或多个节点的情况下返回true</p>
-</blockquote>
-<h4 id="childeNodes"><a href="#childeNodes" class="headerlink" title="childeNodes"></a>childeNodes</h4><ul>
-<li>nodeList</li>
-<li>nodeList[0] &lt;=&gt; nodeList.item(0)</li>
-</ul>
-<h4 id="previousSibling"><a href="#previousSibling" class="headerlink" title="previousSibling"></a>previousSibling</h4><blockquote>
-<p>第一个节点的previousSibling属性值为null</p>
-</blockquote>
-<h4 id="nextSibling"><a href="#nextSibling" class="headerlink" title="nextSibling"></a>nextSibling</h4><blockquote>
-<p>最后一个节点的nextSibling属性为null</p>
-</blockquote>
-<h4 id="类数组对象"><a href="#类数组对象" class="headerlink" title="类数组对象"></a>类数组对象</h4><h4 id="firstChild"><a href="#firstChild" class="headerlink" title="firstChild"></a>firstChild</h4><blockquote>
-<p>nodeList[0]</p>
-</blockquote>
-<h4 id="lastChild"><a href="#lastChild" class="headerlink" title="lastChild"></a>lastChild</h4><blockquote>
-<p>nodeList[nodeList.length-1]</p>
-</blockquote>
-<h4 id="将类数组对象转化为数组对象的方法"><a href="#将类数组对象转化为数组对象的方法" class="headerlink" title="将类数组对象转化为数组对象的方法"></a>将类数组对象转化为数组对象的方法</h4><h4 id="appendChild"><a href="#appendChild" class="headerlink" title="appendChild()"></a>appendChild()</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var returnedNode = someNode.appendChild(newNode)</span><br><span class="line">returnedNode = newNode //true</span><br><span class="line">someNode.lastChild === newNode //true</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>如果传入到appendChild()中的节点已经是文档的一部分了，那么该节点从原来的位置转移到新位置。</p>
-</blockquote>
-<h4 id="insertBefore-newNode-null-someNode"><a href="#insertBefore-newNode-null-someNode" class="headerlink" title="insertBefore(newNode,null/someNode)"></a>insertBefore(newNode,null/someNode)</h4><blockquote>
-<p>insertBefore(newNoed,null)&lt;=&gt;appendChild()</p>
-</blockquote>
-<h4 id="replaceChild-newNode-oldNode"><a href="#replaceChild-newNode-oldNode" class="headerlink" title="replaceChild(newNode,oldNode)"></a>replaceChild(newNode,oldNode)</h4><blockquote>
-<p>返回被替换的节点，从技术上讲，被替换的节点仍然还在文档中，但它在文档中已经没有了自己的位置。</p>
-</blockquote>
-<h4 id="removeChild"><a href="#removeChild" class="headerlink" title="removeChild()"></a>removeChild()</h4><h4 id="cloneNode"><a href="#cloneNode" class="headerlink" title="cloneNode()"></a>cloneNode()</h4><blockquote>
-<p>true =&gt; 深复制<br>false =&gt; 浅复制</p>
-</blockquote>
-<h4 id="normalize"><a href="#normalize" class="headerlink" title="normalize()"></a>normalize()</h4><h3 id="深拷贝和浅拷贝"><a href="#深拷贝和浅拷贝" class="headerlink" title="深拷贝和浅拷贝"></a>深拷贝和浅拷贝</h3>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/10/前端面试题总结——css篇/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Luoxiaoyier~">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="罗小怡儿的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/10/前端面试题总结——css篇/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-10T10:47:00+08:00">
-                2018-09-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1718,7 +1737,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

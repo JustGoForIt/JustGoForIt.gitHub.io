@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="这是一个个人技术博客，总结一些前端学习的知识。">
+<meta name="description" content="CSS中动画的类型 transition补间动画：从一个状态切换到另一个状态 keyframe关键帧动画：可以设置多个关键帧 逐帧动画：逐帧切换  transition transition-property:指定动态变化的CSS属性【all】 transition-duration:指定完成过渡所需的时间 transition-timing-function:指定过渡函数   ease/line">
 <meta property="og:type" content="article">
-<meta property="og:title" content="罗小怡儿的博客">
-<meta property="og:url" content="http://yoursite.com/2018/09/10/前端面试题总结——css篇/index.html">
+<meta property="og:title" content="CSS中的动画">
+<meta property="og:url" content="http://yoursite.com/2018/11/23/CSS中的动画/index.html">
 <meta property="og:site_name" content="罗小怡儿的博客">
-<meta property="og:description" content="这是一个个人技术博客，总结一些前端学习的知识。">
+<meta property="og:description" content="CSS中动画的类型 transition补间动画：从一个状态切换到另一个状态 keyframe关键帧动画：可以设置多个关键帧 逐帧动画：逐帧切换  transition transition-property:指定动态变化的CSS属性【all】 transition-duration:指定完成过渡所需的时间 transition-timing-function:指定过渡函数   ease/line">
 <meta property="og:locale" content="中文">
-<meta property="og:updated_time" content="2018-09-10T02:47:00.000Z">
+<meta property="og:updated_time" content="2018-11-23T03:47:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="罗小怡儿的博客">
-<meta name="twitter:description" content="这是一个个人技术博客，总结一些前端学习的知识。">
+<meta name="twitter:title" content="CSS中的动画">
+<meta name="twitter:description" content="CSS中动画的类型 transition补间动画：从一个状态切换到另一个状态 keyframe关键帧动画：可以设置多个关键帧 逐帧动画：逐帧切换  transition transition-property:指定动态变化的CSS属性【all】 transition-duration:指定完成过渡所需的时间 transition-timing-function:指定过渡函数   ease/line">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/10/前端面试题总结——css篇/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/23/CSS中的动画/"/>
 
 
 
 
 
-  <title> | 罗小怡儿的博客</title>
+  <title>CSS中的动画 | 罗小怡儿的博客</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/10/前端面试题总结——css篇/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/23/CSS中的动画/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Luoxiaoyier~">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">CSS中的动画</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-10T10:47:00+08:00">
-                2018-09-10
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-23T11:46:59+08:00">
+                2018-11-23
               </time>
             
 
@@ -299,7 +299,77 @@
       
 
       
-        
+        <h2 id="CSS中动画的类型"><a href="#CSS中动画的类型" class="headerlink" title="CSS中动画的类型"></a>CSS中动画的类型</h2><ol>
+<li>transition补间动画：从一个状态切换到另一个状态</li>
+<li>keyframe关键帧动画：可以设置多个关键帧</li>
+<li>逐帧动画：逐帧切换</li>
+</ol>
+<h3 id="transition"><a href="#transition" class="headerlink" title="transition"></a>transition</h3><ol>
+<li>transition-property:指定动态变化的CSS属性【all】</li>
+<li>transition-duration:指定完成过渡所需的时间</li>
+<li>transition-timing-function:指定过渡函数</li>
+</ol>
+<ul>
+<li>ease/linear/ease-in/ease-out/ease-in-out</li>
+</ul>
+<ol start="4">
+<li>transition-dely:指定开始出现的延迟时间<blockquote>
+<p>合并的时候,第一个时间代表动画时间，第二个时间代表延迟时间。</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="keyframes"><a href="#keyframes" class="headerlink" title="keyframes"></a>keyframes</h3><blockquote>
+<p>keyframes中的百分比代表时间</p>
+</blockquote>
+<ol>
+<li>animation-direction: reverse</li>
+<li>animation-duration:</li>
+<li>animation-name:</li>
+<li>animation-delay:</li>
+<li>animation-interation-count:动画播放次数【infinite代表无线循环】</li>
+<li>animation-timing-function:</li>
+<li>animation-fill-mode:保持在哪里 </li>
+<li>animation-play-state:设置动画的播放状态running/paused</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">@keyframes changeColor&#123;</span><br><span class="line">    0%&#123;</span><br><span class="line">        background:red;</span><br><span class="line">    &#125;</span><br><span class="line">    100%&#123;</span><br><span class="line">        background:green;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">等价于</span><br><span class="line">@keyframes changeColor&#123;</span><br><span class="line">    from &#123;</span><br><span class="line">        background:red;</span><br><span class="line">    &#125;</span><br><span class="line">    to &#123;</span><br><span class="line">        background:green;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">div:hover&#123;</span><br><span class="line">    animation: changeColor 5s ease 0.1s</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="逐帧动画"><a href="#逐帧动画" class="headerlink" title="逐帧动画"></a>逐帧动画</h3><blockquote>
+<p>keyframes的特殊形式</p>
+</blockquote>
+<p>1.使用逐帧动画是因为无法计算补间动画。比如实现一个猎豹奔跑的动画。</p>
+<ol start="2">
+<li>实现方式： animation-timing-function: steps(1)</li>
+</ol>
+<h3 id="Chrome的动画面板"><a href="#Chrome的动画面板" class="headerlink" title="Chrome的动画面板"></a>Chrome的动画面板</h3><blockquote>
+<p>与控制台在同一个地方，如果没有点击三个小点，选择Animations</p>
+</blockquote>
+<h3 id="动画曲线"><a href="#动画曲线" class="headerlink" title="动画曲线"></a>动画曲线</h3><blockquote>
+<p>可以在网上定制想要的任何曲线</p>
+</blockquote>
+<h3 id="transform"><a href="#transform" class="headerlink" title="transform"></a>transform</h3><h3 id="考点"><a href="#考点" class="headerlink" title="考点"></a>考点</h3><ol>
+<li>css实现动画的方式有几种:过渡动画和关键帧动画<br>2、过渡动画和关键帧动画的区别</li>
+</ol>
+<ul>
+<li>过渡动画需要状态变化</li>
+<li>关键帧动画不需要状态变化</li>
+<li>关键帧动画能控制更精细</li>
+</ul>
+<ol start="3">
+<li>如何实现逐帧动画</li>
+</ol>
+<ul>
+<li>使用关键帧动画</li>
+<li>去掉补间（steps）</li>
+</ul>
+<ol start="4">
+<li>CSS动画的性能</li>
+</ol>
+<ul>
+<li>性能不坏</li>
+<li>部分情况下优于JS</li>
+<li>但JS可以做到更好</li>
+<li>部分高危属性：box-shadow,无论是用css实现还是JS实现，性能都不是很好。</li>
+</ul>
+
       
     </div>
     
@@ -323,8 +393,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/31/hello-world/" rel="next" title="再次开始">
-                <i class="fa fa-chevron-left"></i> 再次开始
+              <a href="/2018/11/15/flex布局/" rel="next" title="flex布局">
+                <i class="fa fa-chevron-left"></i> flex布局
               </a>
             
           </div>
@@ -332,10 +402,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/10/前端面试题总结——js篇之DOM/" rel="prev" title="前端面试题总结——js篇之DOM">
-                前端面试题总结——js篇之DOM <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -387,8 +453,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -448,6 +523,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS中动画的类型"><span class="nav-number">1.</span> <span class="nav-text">CSS中动画的类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#transition"><span class="nav-number">1.1.</span> <span class="nav-text">transition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#keyframes"><span class="nav-number">1.2.</span> <span class="nav-text">keyframes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逐帧动画"><span class="nav-number">1.3.</span> <span class="nav-text">逐帧动画</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Chrome的动画面板"><span class="nav-number">1.4.</span> <span class="nav-text">Chrome的动画面板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动画曲线"><span class="nav-number">1.5.</span> <span class="nav-text">动画曲线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#transform"><span class="nav-number">1.6.</span> <span class="nav-text">transform</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#考点"><span class="nav-number">1.7.</span> <span class="nav-text">考点</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
