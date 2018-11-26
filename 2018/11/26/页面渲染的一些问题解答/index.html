@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="记录," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,18 +79,17 @@
 
 
 
-<meta name="description" content="这是一个个人技术博客，总结一些前端学习的知识。">
-<meta name="keywords" content="记录">
+<meta name="description" content="从输入URL到得到HTML的详细过程 加载资源的形式：   输入URL(或者跳转页面)加载html 加载html中的资源 js css img video   加载一个资源的过程   浏览器根据DNS服务器得到域名的ip地址 向这个IP的机器发送HTTP请求 服务器收到、处理并返回HTTP请求 浏览器得到返回内容   浏览器渲染页面的过程   根据HTML结构生成DOM Tree 根据CSS生成C">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2018">
-<meta property="og:url" content="http://yoursite.com/2018/07/16/2018/index.html">
+<meta property="og:title" content="页面渲染的一些问题解答">
+<meta property="og:url" content="http://yoursite.com/2018/11/26/页面渲染的一些问题解答/index.html">
 <meta property="og:site_name" content="罗小怡儿的博客">
-<meta property="og:description" content="这是一个个人技术博客，总结一些前端学习的知识。">
+<meta property="og:description" content="从输入URL到得到HTML的详细过程 加载资源的形式：   输入URL(或者跳转页面)加载html 加载html中的资源 js css img video   加载一个资源的过程   浏览器根据DNS服务器得到域名的ip地址 向这个IP的机器发送HTTP请求 服务器收到、处理并返回HTTP请求 浏览器得到返回内容   浏览器渲染页面的过程   根据HTML结构生成DOM Tree 根据CSS生成C">
 <meta property="og:locale" content="中文">
-<meta property="og:updated_time" content="2018-09-06T09:08:44.000Z">
+<meta property="og:updated_time" content="2018-11-26T11:59:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2018">
-<meta name="twitter:description" content="这是一个个人技术博客，总结一些前端学习的知识。">
+<meta name="twitter:title" content="页面渲染的一些问题解答">
+<meta name="twitter:description" content="从输入URL到得到HTML的详细过程 加载资源的形式：   输入URL(或者跳转页面)加载html 加载html中的资源 js css img video   加载一个资源的过程   浏览器根据DNS服务器得到域名的ip地址 向这个IP的机器发送HTTP请求 服务器收到、处理并返回HTTP请求 浏览器得到返回内容   浏览器渲染页面的过程   根据HTML结构生成DOM Tree 根据CSS生成C">
 
 
 
@@ -120,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/07/16/2018/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/26/页面渲染的一些问题解答/"/>
 
 
 
 
 
-  <title>2018 | 罗小怡儿的博客</title>
+  <title>页面渲染的一些问题解答 | 罗小怡儿的博客</title>
   
 
 
@@ -233,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/16/2018/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/26/页面渲染的一些问题解答/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Luoxiaoyier~">
@@ -250,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">2018</h1>
+          <h1 class="post-title" itemprop="name headline">页面渲染的一些问题解答</h1>
         
 
         <div class="post-meta">
@@ -262,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-16T00:27:15+08:00">
-                2018-07-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-26T19:26:21+08:00">
+                2018-11-26
               </time>
             
 
@@ -272,28 +271,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/文字/" itemprop="url" rel="index">
-                    <span itemprop="name">文字</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -322,7 +299,55 @@
       
 
       
-        
+        <h3 id="从输入URL到得到HTML的详细过程"><a href="#从输入URL到得到HTML的详细过程" class="headerlink" title="从输入URL到得到HTML的详细过程"></a>从输入URL到得到HTML的详细过程</h3><ol>
+<li>加载资源的形式：</li>
+</ol>
+<ul>
+<li>输入URL(或者跳转页面)加载html</li>
+<li>加载html中的资源 js css img video</li>
+</ul>
+<ol start="2">
+<li>加载一个资源的过程</li>
+</ol>
+<ul>
+<li>浏览器根据DNS服务器得到域名的ip地址</li>
+<li>向这个IP的机器发送HTTP请求</li>
+<li>服务器收到、处理并返回HTTP请求</li>
+<li>浏览器得到返回内容</li>
+</ul>
+<ol start="3">
+<li>浏览器渲染页面的过程</li>
+</ol>
+<ul>
+<li>根据HTML结构生成DOM Tree</li>
+<li>根据CSS生成CSSOM</li>
+<li>将DOM和CSSOM整合形成RenderTree</li>
+<li>遇到script时，会执行并阻塞渲染</li>
+</ul>
+<h3 id="window-onload和DOMContentLoaded的区别"><a href="#window-onload和DOMContentLoaded的区别" class="headerlink" title="window.onload和DOMContentLoaded的区别"></a>window.onload和DOMContentLoaded的区别</h3><ul>
+<li>window.onload：页面的全部资源记载完毕，包括图片和视频都加载完</li>
+<li>DOMContentLoaded：DOM渲染完即可，此时图片、视频还没有加载完</li>
+</ul>
+<h3 id="为什么把css放在header中？"><a href="#为什么把css放在header中？" class="headerlink" title="为什么把css放在header中？"></a>为什么把css放在header中？</h3><p>如果不放在header中：浏览器先按照默认样式渲染HTML，然后遇到css之后，在根据css重新将html渲染，性能和用户体验都不够好。</p>
+<h3 id="为什么把script放在body结束的位置？"><a href="#为什么把script放在body结束的位置？" class="headerlink" title="为什么把script放在body结束的位置？"></a>为什么把script放在body结束的位置？</h3><ol>
+<li>js会阻塞DOM的渲染，让页面更快显示</li>
+<li>DOM加载完毕之后，js才能获取到所有的的元素标签，并进行操作。</li>
+</ol>
+<h2 id="性能优化的点"><a href="#性能优化的点" class="headerlink" title="性能优化的点"></a>性能优化的点</h2><h3 id="资源加载更快角度"><a href="#资源加载更快角度" class="headerlink" title="资源加载更快角度"></a>资源加载更快角度</h3><ul>
+<li>静态资源的压缩合并，本来需要请求三个js，合并成一个js只需要一个请求就可以完成（webpack commonjs???合并  没听清楚）</li>
+<li>静态资源缓存：通过连接名字控制缓存，名字不变浏览器就会自动缓存，如果名字改变就会重新请求。</li>
+<li>使用CDN让资源加载更快：因为CDN本身会做优化，就近选择资源</li>
+<li>使用SSR后端渲染，数据直接输入到HTML中。</li>
+</ul>
+<h3 id="页面渲染更快角度"><a href="#页面渲染更快角度" class="headerlink" title="页面渲染更快角度"></a>页面渲染更快角度</h3><ul>
+<li>CSS放前面，JS放后面</li>
+<li>懒加载（图片懒加载、下拉加载更多）</li>
+<li>减少DOM查询，对DOM查询做缓存</li>
+<li>减少DOM操作，多个操作尽量合并在一起执行。</li>
+<li>事件节流</li>
+<li>尽早执行操作（如：页面加载过程中，在DOMContentLoaded之后就做操作，不用等待img、video等资源加载完毕之后再操作）</li>
+</ul>
+
       
     </div>
     
@@ -337,12 +362,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/记录/" rel="tag"># 记录</a>
-          
-        </div>
-      
 
       
       
@@ -352,15 +371,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/11/23/CSS中的动画/" rel="next" title="CSS中的动画">
+                <i class="fa fa-chevron-left"></i> CSS中的动画
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/31/用hexo搭建一个博客的步骤/" rel="prev" title="用hexo搭建一个博客的步骤">
-                用hexo搭建一个博客的步骤 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -412,8 +431,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -473,6 +501,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#从输入URL到得到HTML的详细过程"><span class="nav-number">1.</span> <span class="nav-text">从输入URL到得到HTML的详细过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#window-onload和DOMContentLoaded的区别"><span class="nav-number">2.</span> <span class="nav-text">window.onload和DOMContentLoaded的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么把css放在header中？"><span class="nav-number">3.</span> <span class="nav-text">为什么把css放在header中？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么把script放在body结束的位置？"><span class="nav-number">4.</span> <span class="nav-text">为什么把script放在body结束的位置？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#性能优化的点"><span class="nav-number"></span> <span class="nav-text">性能优化的点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#资源加载更快角度"><span class="nav-number">1.</span> <span class="nav-text">资源加载更快角度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#页面渲染更快角度"><span class="nav-number">2.</span> <span class="nav-text">页面渲染更快角度</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
