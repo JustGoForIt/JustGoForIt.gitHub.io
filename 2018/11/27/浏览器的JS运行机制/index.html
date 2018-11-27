@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="argumentsDOM查询返回的DOM元素列表将类数组对象转换为数组对象转换方法： Array.prototype.slice.call() Array.prototype.slice.apply() 123456function trantoArr ()&amp;#123;    var realArr = Array.prototype.slice.apply(arguments)    realA">
+<meta name="description" content="JS运行机制经典题目 题目1： 1234console.log(1);setTimeout(function()&amp;#123;console.log(3)&amp;#125;,0)console.log(2)//1 2 3  题目2： 123456console.log(&amp;apos;A&amp;apos;)while(true)&amp;#123;    &amp;#125;console.log(&amp;apos;B&amp;apos;)//">
 <meta property="og:type" content="article">
-<meta property="og:title" content="类数组对象">
-<meta property="og:url" content="http://yoursite.com/2018/10/22/类数组对象/index.html">
+<meta property="og:title" content="浏览器的JS运行机制">
+<meta property="og:url" content="http://yoursite.com/2018/11/27/浏览器的JS运行机制/index.html">
 <meta property="og:site_name" content="罗小怡儿的博客">
-<meta property="og:description" content="argumentsDOM查询返回的DOM元素列表将类数组对象转换为数组对象转换方法： Array.prototype.slice.call() Array.prototype.slice.apply() 123456function trantoArr ()&amp;#123;    var realArr = Array.prototype.slice.apply(arguments)    realA">
+<meta property="og:description" content="JS运行机制经典题目 题目1： 1234console.log(1);setTimeout(function()&amp;#123;console.log(3)&amp;#125;,0)console.log(2)//1 2 3  题目2： 123456console.log(&amp;apos;A&amp;apos;)while(true)&amp;#123;    &amp;#125;console.log(&amp;apos;B&amp;apos;)//">
 <meta property="og:locale" content="中文">
-<meta property="og:updated_time" content="2018-10-31T11:46:55.000Z">
+<meta property="og:updated_time" content="2018-11-27T12:05:45.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="类数组对象">
-<meta name="twitter:description" content="argumentsDOM查询返回的DOM元素列表将类数组对象转换为数组对象转换方法： Array.prototype.slice.call() Array.prototype.slice.apply() 123456function trantoArr ()&amp;#123;    var realArr = Array.prototype.slice.apply(arguments)    realA">
+<meta name="twitter:title" content="浏览器的JS运行机制">
+<meta name="twitter:description" content="JS运行机制经典题目 题目1： 1234console.log(1);setTimeout(function()&amp;#123;console.log(3)&amp;#125;,0)console.log(2)//1 2 3  题目2： 123456console.log(&amp;apos;A&amp;apos;)while(true)&amp;#123;    &amp;#125;console.log(&amp;apos;B&amp;apos;)//">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/22/类数组对象/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/27/浏览器的JS运行机制/"/>
 
 
 
 
 
-  <title>类数组对象 | 罗小怡儿的博客</title>
+  <title>浏览器的JS运行机制 | 罗小怡儿的博客</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/22/类数组对象/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/27/浏览器的JS运行机制/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Luoxiaoyier~">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">类数组对象</h1>
+          <h1 class="post-title" itemprop="name headline">浏览器的JS运行机制</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-22T15:51:08+08:00">
-                2018-10-22
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-27T20:05:17+08:00">
+                2018-11-27
               </time>
             
 
@@ -299,22 +299,26 @@
       
 
       
-        <h2 id="arguments"><a href="#arguments" class="headerlink" title="arguments"></a>arguments</h2><h2 id="DOM查询返回的DOM元素列表"><a href="#DOM查询返回的DOM元素列表" class="headerlink" title="DOM查询返回的DOM元素列表"></a>DOM查询返回的DOM元素列表</h2><h2 id="将类数组对象转换为数组对象"><a href="#将类数组对象转换为数组对象" class="headerlink" title="将类数组对象转换为数组对象"></a>将类数组对象转换为数组对象</h2><h3 id="转换方法："><a href="#转换方法：" class="headerlink" title="转换方法："></a>转换方法：</h3><ul>
-<li>Array.prototype.slice.call()</li>
-<li><p>Array.prototype.slice.apply()</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function trantoArr ()&#123;</span><br><span class="line">    var realArr = Array.prototype.slice.apply(arguments)</span><br><span class="line">    realArr.push(&apos;test&apos;)</span><br><span class="line">    return realArr</span><br><span class="line">&#125;</span><br><span class="line">trantoArr(&apos;foo&apos;,&apos;bar&apos;) //[&apos;foo&apos;,&apos;bar&apos;,&apos;test&apos;]</span><br></pre></td></tr></table></figure>
+        <h2 id="JS运行机制"><a href="#JS运行机制" class="headerlink" title="JS运行机制"></a>JS运行机制</h2><h3 id="经典题目"><a href="#经典题目" class="headerlink" title="经典题目"></a>经典题目</h3><ul>
+<li><p>题目1：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">console.log(1);</span><br><span class="line">setTimeout(function()&#123;console.log(3)&#125;,0)</span><br><span class="line">console.log(2)</span><br><span class="line">//1 2 3</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>ES6 Array.from()</p>
-<blockquote>
-<p>只要有length属性的对象，都可以应用此方法转换成数组。</p>
-</blockquote>
+<li><p>题目2：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">console.log(&apos;A&apos;)</span><br><span class="line">while(true)&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line">console.log(&apos;B&apos;)</span><br><span class="line">// &apos;A&apos;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>题目3</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">console.log(&apos;A&apos;)</span><br><span class="line">setTimeout(function()&#123;console.log(&apos;B&apos;)&#125;,0)</span><br><span class="line">while(true)&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line">// &apos;A&apos;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>题目4</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for(var i=0;i&lt;4;i++)&#123;</span><br><span class="line">    setTimeout(function()&#123;console.log(i)&#125;,0)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function trantoArr ()&#123;</span><br><span class="line">    var realArr = Array.from(arguments)</span><br><span class="line">    realArr.push(&apos;test&apos;)</span><br><span class="line">    return realArr</span><br><span class="line">&#125;</span><br><span class="line">trantoArr(&apos;foo&apos;,&apos;bar&apos;) //[&apos;foo&apos;,&apos;bar&apos;,&apos;test&apos;]</span><br></pre></td></tr></table></figure>
-<ul>
-<li>$.makeArray()<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function trantoArr ()&#123;</span><br><span class="line">    var realArr = $.makeArray(arguments)</span><br><span class="line">    realArr.push(&apos;test&apos;)</span><br><span class="line">    return realArr</span><br><span class="line">&#125;</span><br><span class="line">trantoArr(&apos;foo&apos;,&apos;bar&apos;) //[&apos;foo&apos;,&apos;bar&apos;,&apos;test&apos;]</span><br></pre></td></tr></table></figure></li>
-</ul>
-
+<h3 id="Event-Loop"><a href="#Event-Loop" class="headerlink" title="Event Loop"></a>Event Loop</h3><h4 id="如何理解JS的单线程：一个时间只能做一件事"><a href="#如何理解JS的单线程：一个时间只能做一件事" class="headerlink" title="如何理解JS的单线程：一个时间只能做一件事"></a>如何理解JS的单线程：一个时间只能做一件事</h4><h4 id="同步任务：当主线程的同步任务执行完毕，再去异步任务队列中取"><a href="#同步任务：当主线程的同步任务执行完毕，再去异步任务队列中取" class="headerlink" title="同步任务：当主线程的同步任务执行完毕，再去异步任务队列中取"></a>同步任务：当主线程的同步任务执行完毕，再去异步任务队列中取</h4><h4 id="异步任务"><a href="#异步任务" class="headerlink" title="异步任务"></a>异步任务</h4><ol>
+<li>setTimeout 和 setInterval</li>
+<li>DOM事件</li>
+<li>ES6的Promise</li>
+</ol>
+<h4 id="Timer模块：异步任务首先放入Timer模块，等到了指定时间，或者触发事件，才放如异步队列"><a href="#Timer模块：异步任务首先放入Timer模块，等到了指定时间，或者触发事件，才放如异步队列" class="headerlink" title="Timer模块：异步任务首先放入Timer模块，等到了指定时间，或者触发事件，才放如异步队列"></a>Timer模块：异步任务首先放入Timer模块，等到了指定时间，或者触发事件，才放如异步队列</h4>
       
     </div>
     
@@ -338,8 +342,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/19/Date常用方法总结/" rel="next" title="Date常用方法总结">
-                <i class="fa fa-chevron-left"></i> Date常用方法总结
+              <a href="/2018/11/26/浏览器页面渲染机制/" rel="next" title="浏览器页面渲染机制">
+                <i class="fa fa-chevron-left"></i> 浏览器页面渲染机制
               </a>
             
           </div>
@@ -347,10 +351,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/27/数组的一些基本属性和方法/" rel="prev" title="数组的一些基本属性和方法">
-                数组的一些基本属性和方法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -482,7 +482,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#arguments"><span class="nav-number">1.</span> <span class="nav-text">arguments</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM查询返回的DOM元素列表"><span class="nav-number">2.</span> <span class="nav-text">DOM查询返回的DOM元素列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将类数组对象转换为数组对象"><span class="nav-number">3.</span> <span class="nav-text">将类数组对象转换为数组对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#转换方法："><span class="nav-number">3.1.</span> <span class="nav-text">转换方法：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JS运行机制"><span class="nav-number">1.</span> <span class="nav-text">JS运行机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#经典题目"><span class="nav-number">1.1.</span> <span class="nav-text">经典题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Event-Loop"><span class="nav-number">1.2.</span> <span class="nav-text">Event Loop</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#如何理解JS的单线程：一个时间只能做一件事"><span class="nav-number">1.2.1.</span> <span class="nav-text">如何理解JS的单线程：一个时间只能做一件事</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#同步任务：当主线程的同步任务执行完毕，再去异步任务队列中取"><span class="nav-number">1.2.2.</span> <span class="nav-text">同步任务：当主线程的同步任务执行完毕，再去异步任务队列中取</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#异步任务"><span class="nav-number">1.2.3.</span> <span class="nav-text">异步任务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Timer模块：异步任务首先放入Timer模块，等到了指定时间，或者触发事件，才放如异步队列"><span class="nav-number">1.2.4.</span> <span class="nav-text">Timer模块：异步任务首先放入Timer模块，等到了指定时间，或者触发事件，才放如异步队列</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
