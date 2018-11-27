@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="CSS中动画的类型 transition补间动画：从一个状态切换到另一个状态 keyframe关键帧动画：可以设置多个关键帧 逐帧动画：逐帧切换  transition transition-property:指定动态变化的CSS属性【all】 transition-duration:指定完成过渡所需的时间 transition-timing-function:指定过渡函数   ease/line">
+<meta name="description" content="渲染机制什么是DOCTYPE及作用 DTD(document type definition 文档类型定义)是一系列的语法规则，用来定义XML或者HTML的文件类型。浏览器会根据它来判断文档类型，从而决定用何种协议来解析，以及切换浏览器模式。 DTD告诉浏览器我是什么文档类型，浏览器根据DTD来来判断我用什么来解析渲染文档   DOCTYPE是用来声明文档类型即是用来声明DTD规范的  告诉浏览器">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS中的动画">
-<meta property="og:url" content="http://yoursite.com/2018/11/23/CSS中的动画/index.html">
+<meta property="og:title" content="浏览器页面渲染机制">
+<meta property="og:url" content="http://yoursite.com/2018/11/26/浏览器页面渲染机制/index.html">
 <meta property="og:site_name" content="罗小怡儿的博客">
-<meta property="og:description" content="CSS中动画的类型 transition补间动画：从一个状态切换到另一个状态 keyframe关键帧动画：可以设置多个关键帧 逐帧动画：逐帧切换  transition transition-property:指定动态变化的CSS属性【all】 transition-duration:指定完成过渡所需的时间 transition-timing-function:指定过渡函数   ease/line">
+<meta property="og:description" content="渲染机制什么是DOCTYPE及作用 DTD(document type definition 文档类型定义)是一系列的语法规则，用来定义XML或者HTML的文件类型。浏览器会根据它来判断文档类型，从而决定用何种协议来解析，以及切换浏览器模式。 DTD告诉浏览器我是什么文档类型，浏览器根据DTD来来判断我用什么来解析渲染文档   DOCTYPE是用来声明文档类型即是用来声明DTD规范的  告诉浏览器">
 <meta property="og:locale" content="中文">
-<meta property="og:updated_time" content="2018-11-23T03:47:48.000Z">
+<meta property="og:updated_time" content="2018-11-27T11:44:19.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS中的动画">
-<meta name="twitter:description" content="CSS中动画的类型 transition补间动画：从一个状态切换到另一个状态 keyframe关键帧动画：可以设置多个关键帧 逐帧动画：逐帧切换  transition transition-property:指定动态变化的CSS属性【all】 transition-duration:指定完成过渡所需的时间 transition-timing-function:指定过渡函数   ease/line">
+<meta name="twitter:title" content="浏览器页面渲染机制">
+<meta name="twitter:description" content="渲染机制什么是DOCTYPE及作用 DTD(document type definition 文档类型定义)是一系列的语法规则，用来定义XML或者HTML的文件类型。浏览器会根据它来判断文档类型，从而决定用何种协议来解析，以及切换浏览器模式。 DTD告诉浏览器我是什么文档类型，浏览器根据DTD来来判断我用什么来解析渲染文档   DOCTYPE是用来声明文档类型即是用来声明DTD规范的  告诉浏览器">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/23/CSS中的动画/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/26/浏览器页面渲染机制/"/>
 
 
 
 
 
-  <title>CSS中的动画 | 罗小怡儿的博客</title>
+  <title>浏览器页面渲染机制 | 罗小怡儿的博客</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/23/CSS中的动画/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/26/浏览器页面渲染机制/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Luoxiaoyier~">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">CSS中的动画</h1>
+          <h1 class="post-title" itemprop="name headline">浏览器页面渲染机制</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-23T11:46:59+08:00">
-                2018-11-23
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-26T19:26:21+08:00">
+                2018-11-26
               </time>
             
 
@@ -299,76 +299,81 @@
       
 
       
-        <h2 id="CSS中动画的类型"><a href="#CSS中动画的类型" class="headerlink" title="CSS中动画的类型"></a>CSS中动画的类型</h2><ol>
-<li>transition补间动画：从一个状态切换到另一个状态</li>
-<li>keyframe关键帧动画：可以设置多个关键帧</li>
-<li>逐帧动画：逐帧切换</li>
-</ol>
-<h3 id="transition"><a href="#transition" class="headerlink" title="transition"></a>transition</h3><ol>
-<li>transition-property:指定动态变化的CSS属性【all】</li>
-<li>transition-duration:指定完成过渡所需的时间</li>
-<li>transition-timing-function:指定过渡函数</li>
-</ol>
-<ul>
-<li>ease/linear/ease-in/ease-out/ease-in-out</li>
-</ul>
-<ol start="4">
-<li>transition-dely:指定开始出现的延迟时间<blockquote>
-<p>合并的时候,第一个时间代表动画时间，第二个时间代表延迟时间。</p>
+        <h2 id="渲染机制"><a href="#渲染机制" class="headerlink" title="渲染机制"></a>渲染机制</h2><h3 id="什么是DOCTYPE及作用"><a href="#什么是DOCTYPE及作用" class="headerlink" title="什么是DOCTYPE及作用"></a>什么是DOCTYPE及作用</h3><ul>
+<li>DTD(document type definition 文档类型定义)是一系列的语法规则，用来定义XML或者HTML的文件类型。浏览器会根据它来判断文档类型，从而决定用何种协议来解析，以及切换浏览器模式。<blockquote>
+<p>DTD告诉浏览器我是什么文档类型，浏览器根据DTD来来判断我用什么来解析渲染文档</p>
 </blockquote>
 </li>
-</ol>
-<h3 id="keyframes"><a href="#keyframes" class="headerlink" title="keyframes"></a>keyframes</h3><blockquote>
-<p>keyframes中的百分比代表时间</p>
+<li>DOCTYPE是用来声明文档类型即是用来声明DTD规范的 <blockquote>
+<p>告诉浏览器什么是DTD</p>
 </blockquote>
+<h3 id="常见的DOCTYPE有哪些"><a href="#常见的DOCTYPE有哪些" class="headerlink" title="常见的DOCTYPE有哪些"></a>常见的DOCTYPE有哪些</h3></li>
+</ul>
 <ol>
-<li>animation-direction: reverse</li>
-<li>animation-duration:</li>
-<li>animation-name:</li>
-<li>animation-delay:</li>
-<li>animation-interation-count:动画播放次数【infinite代表无线循环】</li>
-<li>animation-timing-function:</li>
-<li>animation-fill-mode:保持在哪里 </li>
-<li>animation-play-state:设置动画的播放状态running/paused</li>
+<li><p>html5</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYLE html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>html4.01严格模式：该DTD包含所有HTML元素和属性，但是不包含展示性和弃用的元素，如：font</p>
+</li>
+<li>html4.01传统模式:该DTD包含所有HTML元素和属性,包含展示性和弃用的元素，如：font</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">@keyframes changeColor&#123;</span><br><span class="line">    0%&#123;</span><br><span class="line">        background:red;</span><br><span class="line">    &#125;</span><br><span class="line">    100%&#123;</span><br><span class="line">        background:green;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">等价于</span><br><span class="line">@keyframes changeColor&#123;</span><br><span class="line">    from &#123;</span><br><span class="line">        background:red;</span><br><span class="line">    &#125;</span><br><span class="line">    to &#123;</span><br><span class="line">        background:green;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">div:hover&#123;</span><br><span class="line">    animation: changeColor 5s ease 0.1s</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="逐帧动画"><a href="#逐帧动画" class="headerlink" title="逐帧动画"></a>逐帧动画</h3><blockquote>
-<p>keyframes的特殊形式</p>
-</blockquote>
-<p>1.使用逐帧动画是因为无法计算补间动画。比如实现一个猎豹奔跑的动画。</p>
-<ol start="2">
-<li>实现方式： animation-timing-function: steps(1)</li>
+<h3 id="浏览器的渲染过程"><a href="#浏览器的渲染过程" class="headerlink" title="浏览器的渲染过程"></a>浏览器的渲染过程</h3><ol>
+<li>HTML经过HTML Parse(DOM Parse)转换成DOM Tree</li>
+<li>CSS经过CSS Parse转换成 CSSOM Tree</li>
+<li>DOM Tree和CSSOM Tree结合生成Render Tree</li>
+<li>Render Tree + layout(元素显示的位置)绘图</li>
+<li>最后展现出页面内容</li>
 </ol>
-<h3 id="Chrome的动画面板"><a href="#Chrome的动画面板" class="headerlink" title="Chrome的动画面板"></a>Chrome的动画面板</h3><blockquote>
-<p>与控制台在同一个地方，如果没有点击三个小点，选择Animations</p>
+<h3 id="重排-reflow"><a href="#重排-reflow" class="headerlink" title="重排 reflow"></a>重排 reflow</h3><blockquote>
+<p>渲染树的节点发生了结构性变化，如宽度、高度或者位置上的变化，就会触发reflow。</p>
 </blockquote>
-<h3 id="动画曲线"><a href="#动画曲线" class="headerlink" title="动画曲线"></a>动画曲线</h3><blockquote>
-<p>可以在网上定制想要的任何曲线</p>
+<h4 id="触发条件举例"><a href="#触发条件举例" class="headerlink" title="触发条件举例"></a>触发条件举例</h4><ol>
+<li>对DOM进行增删改</li>
+<li>CSS修改元素宽、高</li>
+<li>改变浏览器窗口大小或者滚动</li>
+<li>修改网页的默认字体</li>
+</ol>
+<h3 id="重绘-repaint"><a href="#重绘-repaint" class="headerlink" title="重绘 repaint"></a>重绘 repaint</h3><blockquote>
+<p>渲染树的节点发生了非结构性变化，例如北京颜色的变化，就会触发repaint逻辑。</p>
 </blockquote>
-<h3 id="transform"><a href="#transform" class="headerlink" title="transform"></a>transform</h3><h3 id="考点"><a href="#考点" class="headerlink" title="考点"></a>考点</h3><ol>
-<li>css实现动画的方式有几种:过渡动画和关键帧动画<br>2、过渡动画和关键帧动画的区别</li>
+<h4 id="触发条件举例-1"><a href="#触发条件举例-1" class="headerlink" title="触发条件举例"></a>触发条件举例</h4><ol>
+<li>reflow一定会触发repaint</li>
+<li>CSS修改元素颜色</li>
+</ol>
+<h3 id="从输入URL到得到HTML的详细过程"><a href="#从输入URL到得到HTML的详细过程" class="headerlink" title="从输入URL到得到HTML的详细过程"></a>从输入URL到得到HTML的详细过程</h3><ol>
+<li>加载资源的形式：</li>
 </ol>
 <ul>
-<li>过渡动画需要状态变化</li>
-<li>关键帧动画不需要状态变化</li>
-<li>关键帧动画能控制更精细</li>
+<li>输入URL(或者跳转页面)加载html</li>
+<li>加载html中的资源 js css img video</li>
+</ul>
+<ol start="2">
+<li>加载一个资源的过程</li>
+</ol>
+<ul>
+<li>浏览器根据DNS服务器得到域名的ip地址</li>
+<li>向这个IP的机器发送HTTP请求</li>
+<li>服务器收到、处理并返回HTTP请求</li>
+<li>浏览器得到返回内容</li>
 </ul>
 <ol start="3">
-<li>如何实现逐帧动画</li>
+<li>浏览器渲染页面的过程</li>
 </ol>
 <ul>
-<li>使用关键帧动画</li>
-<li>去掉补间（steps）</li>
+<li>根据HTML结构生成DOM Tree</li>
+<li>根据CSS生成CSSOM</li>
+<li>将DOM和CSSOM整合形成RenderTree</li>
+<li>遇到script时，会执行并阻塞渲染</li>
 </ul>
-<ol start="4">
-<li>CSS动画的性能</li>
+<h3 id="window-onload和DOMContentLoaded的区别"><a href="#window-onload和DOMContentLoaded的区别" class="headerlink" title="window.onload和DOMContentLoaded的区别"></a>window.onload和DOMContentLoaded的区别</h3><ul>
+<li>window.onload：页面的全部资源记载完毕，包括图片和视频都加载完</li>
+<li>DOMContentLoaded：DOM渲染完即可，此时图片、视频还没有加载完</li>
+</ul>
+<h3 id="为什么把css放在header中？"><a href="#为什么把css放在header中？" class="headerlink" title="为什么把css放在header中？"></a>为什么把css放在header中？</h3><p>如果不放在header中：浏览器先按照默认样式渲染HTML，然后遇到css之后，在根据css重新将html渲染，性能和用户体验都不够好。</p>
+<h3 id="为什么把script放在body结束的位置？"><a href="#为什么把script放在body结束的位置？" class="headerlink" title="为什么把script放在body结束的位置？"></a>为什么把script放在body结束的位置？</h3><ol>
+<li>js会阻塞DOM的渲染，让页面更快显示</li>
+<li>DOM加载完毕之后，js才能获取到所有的的元素标签，并进行操作。</li>
 </ol>
-<ul>
-<li>性能不坏</li>
-<li>部分情况下优于JS</li>
-<li>但JS可以做到更好</li>
-<li>部分高危属性：box-shadow,无论是用css实现还是JS实现，性能都不是很好。</li>
-</ul>
 
       
     </div>
@@ -393,8 +398,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/15/flex布局/" rel="next" title="flex布局">
-                <i class="fa fa-chevron-left"></i> flex布局
+              <a href="/2018/11/23/CSS中的动画/" rel="next" title="CSS中的动画">
+                <i class="fa fa-chevron-left"></i> CSS中的动画
               </a>
             
           </div>
@@ -402,10 +407,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/26/浏览器页面渲染机制/" rel="prev" title="浏览器页面渲染机制">
-                浏览器页面渲染机制 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -537,7 +538,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS中动画的类型"><span class="nav-number">1.</span> <span class="nav-text">CSS中动画的类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#transition"><span class="nav-number">1.1.</span> <span class="nav-text">transition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#keyframes"><span class="nav-number">1.2.</span> <span class="nav-text">keyframes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逐帧动画"><span class="nav-number">1.3.</span> <span class="nav-text">逐帧动画</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Chrome的动画面板"><span class="nav-number">1.4.</span> <span class="nav-text">Chrome的动画面板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动画曲线"><span class="nav-number">1.5.</span> <span class="nav-text">动画曲线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#transform"><span class="nav-number">1.6.</span> <span class="nav-text">transform</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#考点"><span class="nav-number">1.7.</span> <span class="nav-text">考点</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#渲染机制"><span class="nav-number">1.</span> <span class="nav-text">渲染机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是DOCTYPE及作用"><span class="nav-number">1.1.</span> <span class="nav-text">什么是DOCTYPE及作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见的DOCTYPE有哪些"><span class="nav-number">1.2.</span> <span class="nav-text">常见的DOCTYPE有哪些</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器的渲染过程"><span class="nav-number">1.3.</span> <span class="nav-text">浏览器的渲染过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重排-reflow"><span class="nav-number">1.4.</span> <span class="nav-text">重排 reflow</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#触发条件举例"><span class="nav-number">1.4.1.</span> <span class="nav-text">触发条件举例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重绘-repaint"><span class="nav-number">1.5.</span> <span class="nav-text">重绘 repaint</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#触发条件举例-1"><span class="nav-number">1.5.1.</span> <span class="nav-text">触发条件举例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从输入URL到得到HTML的详细过程"><span class="nav-number">1.6.</span> <span class="nav-text">从输入URL到得到HTML的详细过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#window-onload和DOMContentLoaded的区别"><span class="nav-number">1.7.</span> <span class="nav-text">window.onload和DOMContentLoaded的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么把css放在header中？"><span class="nav-number">1.8.</span> <span class="nav-text">为什么把css放在header中？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么把script放在body结束的位置？"><span class="nav-number">1.9.</span> <span class="nav-text">为什么把script放在body结束的位置？</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/26/页面渲染的一些问题解答/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/26/浏览器页面渲染机制/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Luoxiaoyier~">
@@ -251,7 +251,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/26/页面渲染的一些问题解答/" itemprop="url">页面渲染的一些问题解答</a></h1>
+                <a class="post-title-link" href="/2018/11/26/浏览器页面渲染机制/" itemprop="url">浏览器页面渲染机制</a></h1>
         
 
         <div class="post-meta">
@@ -303,7 +303,48 @@
       
         
           
-            <h3 id="从输入URL到得到HTML的详细过程"><a href="#从输入URL到得到HTML的详细过程" class="headerlink" title="从输入URL到得到HTML的详细过程"></a>从输入URL到得到HTML的详细过程</h3><ol>
+            <h2 id="渲染机制"><a href="#渲染机制" class="headerlink" title="渲染机制"></a>渲染机制</h2><h3 id="什么是DOCTYPE及作用"><a href="#什么是DOCTYPE及作用" class="headerlink" title="什么是DOCTYPE及作用"></a>什么是DOCTYPE及作用</h3><ul>
+<li>DTD(document type definition 文档类型定义)是一系列的语法规则，用来定义XML或者HTML的文件类型。浏览器会根据它来判断文档类型，从而决定用何种协议来解析，以及切换浏览器模式。<blockquote>
+<p>DTD告诉浏览器我是什么文档类型，浏览器根据DTD来来判断我用什么来解析渲染文档</p>
+</blockquote>
+</li>
+<li>DOCTYPE是用来声明文档类型即是用来声明DTD规范的 <blockquote>
+<p>告诉浏览器什么是DTD</p>
+</blockquote>
+<h3 id="常见的DOCTYPE有哪些"><a href="#常见的DOCTYPE有哪些" class="headerlink" title="常见的DOCTYPE有哪些"></a>常见的DOCTYPE有哪些</h3></li>
+</ul>
+<ol>
+<li><p>html5</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYLE html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>html4.01严格模式：该DTD包含所有HTML元素和属性，但是不包含展示性和弃用的元素，如：font</p>
+</li>
+<li>html4.01传统模式:该DTD包含所有HTML元素和属性,包含展示性和弃用的元素，如：font</li>
+</ol>
+<h3 id="浏览器的渲染过程"><a href="#浏览器的渲染过程" class="headerlink" title="浏览器的渲染过程"></a>浏览器的渲染过程</h3><ol>
+<li>HTML经过HTML Parse(DOM Parse)转换成DOM Tree</li>
+<li>CSS经过CSS Parse转换成 CSSOM Tree</li>
+<li>DOM Tree和CSSOM Tree结合生成Render Tree</li>
+<li>Render Tree + layout(元素显示的位置)绘图</li>
+<li>最后展现出页面内容</li>
+</ol>
+<h3 id="重排-reflow"><a href="#重排-reflow" class="headerlink" title="重排 reflow"></a>重排 reflow</h3><blockquote>
+<p>渲染树的节点发生了结构性变化，如宽度、高度或者位置上的变化，就会触发reflow。</p>
+</blockquote>
+<h4 id="触发条件举例"><a href="#触发条件举例" class="headerlink" title="触发条件举例"></a>触发条件举例</h4><ol>
+<li>对DOM进行增删改</li>
+<li>CSS修改元素宽、高</li>
+<li>改变浏览器窗口大小或者滚动</li>
+<li>修改网页的默认字体</li>
+</ol>
+<h3 id="重绘-repaint"><a href="#重绘-repaint" class="headerlink" title="重绘 repaint"></a>重绘 repaint</h3><blockquote>
+<p>渲染树的节点发生了非结构性变化，例如北京颜色的变化，就会触发repaint逻辑。</p>
+</blockquote>
+<h4 id="触发条件举例-1"><a href="#触发条件举例-1" class="headerlink" title="触发条件举例"></a>触发条件举例</h4><ol>
+<li>reflow一定会触发repaint</li>
+<li>CSS修改元素颜色</li>
+</ol>
+<h3 id="从输入URL到得到HTML的详细过程"><a href="#从输入URL到得到HTML的详细过程" class="headerlink" title="从输入URL到得到HTML的详细过程"></a>从输入URL到得到HTML的详细过程</h3><ol>
 <li>加载资源的形式：</li>
 </ol>
 <ul>
@@ -337,20 +378,6 @@
 <li>js会阻塞DOM的渲染，让页面更快显示</li>
 <li>DOM加载完毕之后，js才能获取到所有的的元素标签，并进行操作。</li>
 </ol>
-<h2 id="性能优化的点"><a href="#性能优化的点" class="headerlink" title="性能优化的点"></a>性能优化的点</h2><h3 id="资源加载更快角度"><a href="#资源加载更快角度" class="headerlink" title="资源加载更快角度"></a>资源加载更快角度</h3><ul>
-<li>静态资源的压缩合并，本来需要请求三个js，合并成一个js只需要一个请求就可以完成（webpack commonjs???合并  没听清楚）</li>
-<li>静态资源缓存：通过连接名字控制缓存，名字不变浏览器就会自动缓存，如果名字改变就会重新请求。</li>
-<li>使用CDN让资源加载更快：因为CDN本身会做优化，就近选择资源</li>
-<li>使用SSR后端渲染，数据直接输入到HTML中。</li>
-</ul>
-<h3 id="页面渲染更快角度"><a href="#页面渲染更快角度" class="headerlink" title="页面渲染更快角度"></a>页面渲染更快角度</h3><ul>
-<li>CSS放前面，JS放后面</li>
-<li>懒加载（图片懒加载、下拉加载更多）</li>
-<li>减少DOM查询，对DOM查询做缓存</li>
-<li>减少DOM操作，多个操作尽量合并在一起执行。</li>
-<li>事件节流</li>
-<li>尽早执行操作（如：页面加载过程中，在DOMContentLoaded之后就做操作，不用等待img、video等资源加载完毕之后再操作）</li>
-</ul>
 
           
         
