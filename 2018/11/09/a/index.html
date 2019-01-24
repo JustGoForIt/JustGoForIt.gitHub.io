@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Document   	 	function reversefn (a){     	var stringa = a+&apos;&apos;;         var stringb = &apos;&apos;     	for(var i = stringa.length-1;i&amp;gt;=0;i--){        		stringb+=stringa[i]     	}         console.log(parse">
+<meta name="description" content="Document   	 		var removeDuplicates = function(nums) { 		    let k = nums.length-1 		    let count = 0 		    for(let i=nums.length-1;i&amp;gt;=0;i--){ 		        if(nums[k]==nums[i]){ 		            coun">
 <meta property="og:type" content="article">
 <meta property="og:title" content="罗小怡儿的博客">
 <meta property="og:url" content="http://yoursite.com/2018/11/09/a/index.html">
 <meta property="og:site_name" content="罗小怡儿的博客">
-<meta property="og:description" content="Document   	 	function reversefn (a){     	var stringa = a+&apos;&apos;;         var stringb = &apos;&apos;     	for(var i = stringa.length-1;i&amp;gt;=0;i--){        		stringb+=stringa[i]     	}         console.log(parse">
+<meta property="og:description" content="Document   	 		var removeDuplicates = function(nums) { 		    let k = nums.length-1 		    let count = 0 		    for(let i=nums.length-1;i&amp;gt;=0;i--){ 		        if(nums[k]==nums[i]){ 		            coun">
 <meta property="og:locale" content="中文">
-<meta property="og:updated_time" content="2018-11-09T07:15:45.000Z">
+<meta property="og:updated_time" content="2018-12-01T15:51:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="罗小怡儿的博客">
-<meta name="twitter:description" content="Document   	 	function reversefn (a){     	var stringa = a+&apos;&apos;;         var stringb = &apos;&apos;     	for(var i = stringa.length-1;i&amp;gt;=0;i--){        		stringb+=stringa[i]     	}         console.log(parse">
+<meta name="twitter:description" content="Document   	 		var removeDuplicates = function(nums) { 		    let k = nums.length-1 		    let count = 0 		    for(let i=nums.length-1;i&amp;gt;=0;i--){ 		        if(nums[k]==nums[i]){ 		            coun">
 
 
 
@@ -307,16 +307,23 @@
 </head>
 <body>
 	<script type="text/javascript">
-	function reversefn (a){
-    	var stringa = a+'';
-        var stringb = ''
-    	for(var i = stringa.length-1;i>=0;i--){
-       		stringb+=stringa[i]
-    	}
-        console.log(parseInt(stringb))
-        
-	}
-	reversefn(0)
+		var removeDuplicates = function(nums) {
+		    let k = nums.length-1
+		    let count = 0
+		    for(let i=nums.length-1;i>=0;i--){
+		        if(nums[k]==nums[i]){
+		            count++
+		            if(count>2){
+		                nums.splice(i,1)
+		            }
+		        }else{
+		           count = 0
+		           k = i     
+		        }
+		    }
+		    return nums.length
+		};
+		removeDuplicates([1,1,1,2,2,3])
 	</script>
 </body>
 </html>
@@ -423,7 +430,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -482,7 +489,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

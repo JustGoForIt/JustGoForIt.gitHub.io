@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="JS运行机制经典题目 题目1： 1234console.log(1);setTimeout(function()&amp;#123;console.log(3)&amp;#125;,0)console.log(2)//1 2 3  题目2： 123456console.log(&amp;apos;A&amp;apos;)while(true)&amp;#123;    &amp;#125;console.log(&amp;apos;B&amp;apos;)//">
+<meta name="description" content="DOM事件的级别DOM0123456var btn = document.getElementById(&amp;apos;myBtn&amp;apos;)btn.onclick = function()&amp;#123;    //do something    //this -&amp;gt; btn&amp;#125;//删除 DOM2123456789101112131415element.addEventListener(&amp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="浏览器的JS运行机制">
-<meta property="og:url" content="http://yoursite.com/2018/11/27/浏览器的JS运行机制/index.html">
+<meta property="og:title" content="前端面试题总结——事件篇">
+<meta property="og:url" content="http://yoursite.com/2019/01/24/前端面试题总结——事件篇/index.html">
 <meta property="og:site_name" content="罗小怡儿的博客">
-<meta property="og:description" content="JS运行机制经典题目 题目1： 1234console.log(1);setTimeout(function()&amp;#123;console.log(3)&amp;#125;,0)console.log(2)//1 2 3  题目2： 123456console.log(&amp;apos;A&amp;apos;)while(true)&amp;#123;    &amp;#125;console.log(&amp;apos;B&amp;apos;)//">
+<meta property="og:description" content="DOM事件的级别DOM0123456var btn = document.getElementById(&amp;apos;myBtn&amp;apos;)btn.onclick = function()&amp;#123;    //do something    //this -&amp;gt; btn&amp;#125;//删除 DOM2123456789101112131415element.addEventListener(&amp;">
 <meta property="og:locale" content="中文">
-<meta property="og:updated_time" content="2018-11-27T12:05:45.000Z">
+<meta property="og:updated_time" content="2019-01-24T10:45:33.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="浏览器的JS运行机制">
-<meta name="twitter:description" content="JS运行机制经典题目 题目1： 1234console.log(1);setTimeout(function()&amp;#123;console.log(3)&amp;#125;,0)console.log(2)//1 2 3  题目2： 123456console.log(&amp;apos;A&amp;apos;)while(true)&amp;#123;    &amp;#125;console.log(&amp;apos;B&amp;apos;)//">
+<meta name="twitter:title" content="前端面试题总结——事件篇">
+<meta name="twitter:description" content="DOM事件的级别DOM0123456var btn = document.getElementById(&amp;apos;myBtn&amp;apos;)btn.onclick = function()&amp;#123;    //do something    //this -&amp;gt; btn&amp;#125;//删除 DOM2123456789101112131415element.addEventListener(&amp;">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/27/浏览器的JS运行机制/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/01/24/前端面试题总结——事件篇/"/>
 
 
 
 
 
-  <title>浏览器的JS运行机制 | 罗小怡儿的博客</title>
+  <title>前端面试题总结——事件篇 | 罗小怡儿的博客</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/27/浏览器的JS运行机制/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/24/前端面试题总结——事件篇/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Luoxiaoyier~">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">浏览器的JS运行机制</h1>
+          <h1 class="post-title" itemprop="name headline">前端面试题总结——事件篇</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-27T20:05:17+08:00">
-                2018-11-27
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-24T17:52:09+08:00">
+                2019-01-24
               </time>
             
 
@@ -299,26 +299,31 @@
       
 
       
-        <h2 id="JS运行机制"><a href="#JS运行机制" class="headerlink" title="JS运行机制"></a>JS运行机制</h2><h3 id="经典题目"><a href="#经典题目" class="headerlink" title="经典题目"></a>经典题目</h3><ul>
-<li><p>题目1：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">console.log(1);</span><br><span class="line">setTimeout(function()&#123;console.log(3)&#125;,0)</span><br><span class="line">console.log(2)</span><br><span class="line">//1 2 3</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>题目2：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">console.log(&apos;A&apos;)</span><br><span class="line">while(true)&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line">console.log(&apos;B&apos;)</span><br><span class="line">// &apos;A&apos;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>题目3</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">console.log(&apos;A&apos;)</span><br><span class="line">setTimeout(function()&#123;console.log(&apos;B&apos;)&#125;,0)</span><br><span class="line">while(true)&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line">// &apos;A&apos;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>题目4</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for(var i=0;i&lt;4;i++)&#123;</span><br><span class="line">    setTimeout(function()&#123;console.log(i)&#125;,0)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="Event-Loop"><a href="#Event-Loop" class="headerlink" title="Event Loop"></a>Event Loop</h3><h4 id="如何理解JS的单线程：一个时间只能做一件事"><a href="#如何理解JS的单线程：一个时间只能做一件事" class="headerlink" title="如何理解JS的单线程：一个时间只能做一件事"></a>如何理解JS的单线程：一个时间只能做一件事</h4><h4 id="同步任务：当主线程的同步任务执行完毕，再去异步任务队列中取"><a href="#同步任务：当主线程的同步任务执行完毕，再去异步任务队列中取" class="headerlink" title="同步任务：当主线程的同步任务执行完毕，再去异步任务队列中取"></a>同步任务：当主线程的同步任务执行完毕，再去异步任务队列中取</h4><h4 id="异步任务"><a href="#异步任务" class="headerlink" title="异步任务"></a>异步任务</h4><ol>
-<li>setTimeout 和 setInterval</li>
-<li>DOM事件</li>
-<li>ES6的Promise</li>
+        <h3 id="DOM事件的级别"><a href="#DOM事件的级别" class="headerlink" title="DOM事件的级别"></a>DOM事件的级别</h3><h4 id="DOM0"><a href="#DOM0" class="headerlink" title="DOM0"></a>DOM0</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var btn = document.getElementById(&apos;myBtn&apos;)</span><br><span class="line">btn.onclick = function()&#123;</span><br><span class="line">    //do something</span><br><span class="line">    //this -&gt; btn</span><br><span class="line">&#125;</span><br><span class="line">//删除</span><br></pre></td></tr></table></figure>
+<h4 id="DOM2"><a href="#DOM2" class="headerlink" title="DOM2"></a>DOM2</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">element.addEventListener(&apos;click&apos;,function()&#123;</span><br><span class="line">    </span><br><span class="line">&#125;)//默认冒泡阶段触发</span><br><span class="line">element.addEventListener(&apos;click&apos;,function()&#123;</span><br><span class="line">    </span><br><span class="line">&#125;,false)//冒泡阶段触发</span><br><span class="line">element.addEventListener(&apos;click&apos;,function()&#123;</span><br><span class="line">    </span><br><span class="line">&#125;,false)//捕获阶段触发</span><br><span class="line">//通过以上匿名函数添加的事件点击函数，没法移除</span><br><span class="line">var handler = function()&#123;</span><br><span class="line">	//事件处理函数</span><br><span class="line">&#125;</span><br><span class="line">//移除</span><br><span class="line">element.removeEventListener(&apos;click&apos;,hanler,false)</span><br></pre></td></tr></table></figure>
+<h4 id="DOM3"><a href="#DOM3" class="headerlink" title="DOM3"></a>DOM3</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">element.addEventListener(&apos;keyup&apos;,function()&#123;</span><br><span class="line">    </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="DOM事件模型"><a href="#DOM事件模型" class="headerlink" title="DOM事件模型"></a>DOM事件模型</h3><ol>
+<li>事件捕获</li>
+<li>事件冒泡</li>
 </ol>
-<h4 id="Timer模块：异步任务首先放入Timer模块，等到了指定时间，或者触发事件，才放如异步队列"><a href="#Timer模块：异步任务首先放入Timer模块，等到了指定时间，或者触发事件，才放如异步队列" class="headerlink" title="Timer模块：异步任务首先放入Timer模块，等到了指定时间，或者触发事件，才放如异步队列"></a>Timer模块：异步任务首先放入Timer模块，等到了指定时间，或者触发事件，才放如异步队列</h4>
+<h3 id="DOM事件流"><a href="#DOM事件流" class="headerlink" title="DOM事件流"></a>DOM事件流</h3><blockquote>
+<p>事件流描述的是页面中接受事件的顺序</p>
+<ol>
+<li>第一阶段：事件捕获阶段</li>
+<li>第二阶段：处于目标阶段</li>
+<li>第三阶段：冒泡阶段</li>
+</ol>
+</blockquote>
+<h3 id="描述DOM事件捕获的具体流程"><a href="#描述DOM事件捕获的具体流程" class="headerlink" title="描述DOM事件捕获的具体流程"></a>描述DOM事件捕获的具体流程</h3><p>1.浏览器的实际实现中：第一个接受到时间的对象window<br>2.window-&gt;document-&gt;html-&gt;body-&gt;….-&gt;目标元素-&gt;….冒泡-&gt;document-&gt;window<br>3.获取html节点：document.documentElement</p>
+<h3 id="Event对象的常见应用"><a href="#Event对象的常见应用" class="headerlink" title="Event对象的常见应用"></a>Event对象的常见应用</h3><ol>
+<li>event.preventDefault()</li>
+<li>event.stopPropagation()</li>
+<li>event.stopImmediatePropagation()</li>
+<li>event.currentTarget </li>
+<li>event.target </li>
+</ol>
+<h3 id="自定义事件"><a href="#自定义事件" class="headerlink" title="自定义事件"></a>自定义事件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var eve = new Event(&apos;custome&apos;)</span><br><span class="line">ev.addEventListener(&apos;custome&apos;,function()&#123;</span><br><span class="line">    console.log(&apos;custome&apos;)</span><br><span class="line">&#125;)</span><br><span class="line">ev.dispatchEvent(eve)</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -342,8 +347,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/26/浏览器页面渲染机制/" rel="next" title="浏览器页面渲染机制">
-                <i class="fa fa-chevron-left"></i> 浏览器页面渲染机制
+              <a href="/2018/11/27/浏览器的JS运行机制/" rel="next" title="浏览器的JS运行机制">
+                <i class="fa fa-chevron-left"></i> 浏览器的JS运行机制
               </a>
             
           </div>
@@ -351,10 +356,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/24/前端面试题总结——事件篇/" rel="prev" title="前端面试题总结——事件篇">
-                前端面试题总结——事件篇 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -486,7 +487,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JS运行机制"><span class="nav-number">1.</span> <span class="nav-text">JS运行机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#经典题目"><span class="nav-number">1.1.</span> <span class="nav-text">经典题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Event-Loop"><span class="nav-number">1.2.</span> <span class="nav-text">Event Loop</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#如何理解JS的单线程：一个时间只能做一件事"><span class="nav-number">1.2.1.</span> <span class="nav-text">如何理解JS的单线程：一个时间只能做一件事</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#同步任务：当主线程的同步任务执行完毕，再去异步任务队列中取"><span class="nav-number">1.2.2.</span> <span class="nav-text">同步任务：当主线程的同步任务执行完毕，再去异步任务队列中取</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#异步任务"><span class="nav-number">1.2.3.</span> <span class="nav-text">异步任务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Timer模块：异步任务首先放入Timer模块，等到了指定时间，或者触发事件，才放如异步队列"><span class="nav-number">1.2.4.</span> <span class="nav-text">Timer模块：异步任务首先放入Timer模块，等到了指定时间，或者触发事件，才放如异步队列</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM事件的级别"><span class="nav-number">1.</span> <span class="nav-text">DOM事件的级别</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#DOM0"><span class="nav-number">1.1.</span> <span class="nav-text">DOM0</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DOM2"><span class="nav-number">1.2.</span> <span class="nav-text">DOM2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DOM3"><span class="nav-number">1.3.</span> <span class="nav-text">DOM3</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM事件模型"><span class="nav-number">2.</span> <span class="nav-text">DOM事件模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM事件流"><span class="nav-number">3.</span> <span class="nav-text">DOM事件流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#描述DOM事件捕获的具体流程"><span class="nav-number">4.</span> <span class="nav-text">描述DOM事件捕获的具体流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Event对象的常见应用"><span class="nav-number">5.</span> <span class="nav-text">Event对象的常见应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义事件"><span class="nav-number">6.</span> <span class="nav-text">自定义事件</span></a></li></ol></div>
             
 
           </div>

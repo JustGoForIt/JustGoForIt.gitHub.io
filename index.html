@@ -232,6 +232,149 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/24/前端面试题总结——事件篇/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Luoxiaoyier~">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="罗小怡儿的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/24/前端面试题总结——事件篇/" itemprop="url">前端面试题总结——事件篇</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-24T17:52:09+08:00">
+                2019-01-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="DOM事件的级别"><a href="#DOM事件的级别" class="headerlink" title="DOM事件的级别"></a>DOM事件的级别</h3><h4 id="DOM0"><a href="#DOM0" class="headerlink" title="DOM0"></a>DOM0</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var btn = document.getElementById(&apos;myBtn&apos;)</span><br><span class="line">btn.onclick = function()&#123;</span><br><span class="line">    //do something</span><br><span class="line">    //this -&gt; btn</span><br><span class="line">&#125;</span><br><span class="line">//删除</span><br></pre></td></tr></table></figure>
+<h4 id="DOM2"><a href="#DOM2" class="headerlink" title="DOM2"></a>DOM2</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">element.addEventListener(&apos;click&apos;,function()&#123;</span><br><span class="line">    </span><br><span class="line">&#125;)//默认冒泡阶段触发</span><br><span class="line">element.addEventListener(&apos;click&apos;,function()&#123;</span><br><span class="line">    </span><br><span class="line">&#125;,false)//冒泡阶段触发</span><br><span class="line">element.addEventListener(&apos;click&apos;,function()&#123;</span><br><span class="line">    </span><br><span class="line">&#125;,false)//捕获阶段触发</span><br><span class="line">//通过以上匿名函数添加的事件点击函数，没法移除</span><br><span class="line">var handler = function()&#123;</span><br><span class="line">	//事件处理函数</span><br><span class="line">&#125;</span><br><span class="line">//移除</span><br><span class="line">element.removeEventListener(&apos;click&apos;,hanler,false)</span><br></pre></td></tr></table></figure>
+<h4 id="DOM3"><a href="#DOM3" class="headerlink" title="DOM3"></a>DOM3</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">element.addEventListener(&apos;keyup&apos;,function()&#123;</span><br><span class="line">    </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="DOM事件模型"><a href="#DOM事件模型" class="headerlink" title="DOM事件模型"></a>DOM事件模型</h3><ol>
+<li>事件捕获</li>
+<li>事件冒泡</li>
+</ol>
+<h3 id="DOM事件流"><a href="#DOM事件流" class="headerlink" title="DOM事件流"></a>DOM事件流</h3><blockquote>
+<p>事件流描述的是页面中接受事件的顺序</p>
+<ol>
+<li>第一阶段：事件捕获阶段</li>
+<li>第二阶段：处于目标阶段</li>
+<li>第三阶段：冒泡阶段</li>
+</ol>
+</blockquote>
+<h3 id="描述DOM事件捕获的具体流程"><a href="#描述DOM事件捕获的具体流程" class="headerlink" title="描述DOM事件捕获的具体流程"></a>描述DOM事件捕获的具体流程</h3><p>1.浏览器的实际实现中：第一个接受到时间的对象window<br>2.window-&gt;document-&gt;html-&gt;body-&gt;….-&gt;目标元素-&gt;….冒泡-&gt;document-&gt;window<br>3.获取html节点：document.documentElement</p>
+<h3 id="Event对象的常见应用"><a href="#Event对象的常见应用" class="headerlink" title="Event对象的常见应用"></a>Event对象的常见应用</h3><ol>
+<li>event.preventDefault()</li>
+<li>event.stopPropagation()</li>
+<li>event.stopImmediatePropagation()</li>
+<li>event.currentTarget </li>
+<li>event.target </li>
+</ol>
+<h3 id="自定义事件"><a href="#自定义事件" class="headerlink" title="自定义事件"></a>自定义事件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var eve = new Event(&apos;custome&apos;)</span><br><span class="line">ev.addEventListener(&apos;custome&apos;,function()&#123;</span><br><span class="line">    console.log(&apos;custome&apos;)</span><br><span class="line">&#125;)</span><br><span class="line">ev.dispatchEvent(eve)</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/27/浏览器的JS运行机制/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -955,16 +1098,23 @@
 </head>
 <body>
 	<script type="text/javascript">
-	function reversefn (a){
-    	var stringa = a+'';
-        var stringb = ''
-    	for(var i = stringa.length-1;i>=0;i--){
-       		stringb+=stringa[i]
-    	}
-        console.log(parseInt(stringb))
-        
-	}
-	reversefn(0)
+		var removeDuplicates = function(nums) {
+		    let k = nums.length-1
+		    let count = 0
+		    for(let i=nums.length-1;i>=0;i--){
+		        if(nums[k]==nums[i]){
+		            count++
+		            if(count>2){
+		                nums.splice(i,1)
+		            }
+		        }else{
+		           count = 0
+		           k = i     
+		        }
+		    }
+		    return nums.length
+		};
+		removeDuplicates([1,1,1,2,2,3])
 	</script>
 </body>
 </html>
@@ -1589,140 +1739,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/22/类数组对象/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Luoxiaoyier~">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="罗小怡儿的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/22/类数组对象/" itemprop="url">类数组对象</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-22T15:51:08+08:00">
-                2018-10-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="arguments"><a href="#arguments" class="headerlink" title="arguments"></a>arguments</h2><h2 id="DOM查询返回的DOM元素列表"><a href="#DOM查询返回的DOM元素列表" class="headerlink" title="DOM查询返回的DOM元素列表"></a>DOM查询返回的DOM元素列表</h2><h2 id="将类数组对象转换为数组对象"><a href="#将类数组对象转换为数组对象" class="headerlink" title="将类数组对象转换为数组对象"></a>将类数组对象转换为数组对象</h2><h3 id="转换方法："><a href="#转换方法：" class="headerlink" title="转换方法："></a>转换方法：</h3><ul>
-<li>Array.prototype.slice.call()</li>
-<li><p>Array.prototype.slice.apply()</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function trantoArr ()&#123;</span><br><span class="line">    var realArr = Array.prototype.slice.apply(arguments)</span><br><span class="line">    realArr.push(&apos;test&apos;)</span><br><span class="line">    return realArr</span><br><span class="line">&#125;</span><br><span class="line">trantoArr(&apos;foo&apos;,&apos;bar&apos;) //[&apos;foo&apos;,&apos;bar&apos;,&apos;test&apos;]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>ES6 Array.from()</p>
-<blockquote>
-<p>只要有length属性的对象，都可以应用此方法转换成数组。</p>
-</blockquote>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function trantoArr ()&#123;</span><br><span class="line">    var realArr = Array.from(arguments)</span><br><span class="line">    realArr.push(&apos;test&apos;)</span><br><span class="line">    return realArr</span><br><span class="line">&#125;</span><br><span class="line">trantoArr(&apos;foo&apos;,&apos;bar&apos;) //[&apos;foo&apos;,&apos;bar&apos;,&apos;test&apos;]</span><br></pre></td></tr></table></figure>
-<ul>
-<li>$.makeArray()<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function trantoArr ()&#123;</span><br><span class="line">    var realArr = $.makeArray(arguments)</span><br><span class="line">    realArr.push(&apos;test&apos;)</span><br><span class="line">    return realArr</span><br><span class="line">&#125;</span><br><span class="line">trantoArr(&apos;foo&apos;,&apos;bar&apos;) //[&apos;foo&apos;,&apos;bar&apos;,&apos;test&apos;]</span><br></pre></td></tr></table></figure></li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1773,7 +1789,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1832,7 +1848,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
