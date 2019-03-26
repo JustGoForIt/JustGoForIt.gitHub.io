@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="博客搭建," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,18 +79,17 @@
 
 
 
-<meta name="description" content="安装hexo-cli npm install hexo-cli -g   初始化博客   1、新建一个文件夹，例如命名为myblog2、进入刚刚新建的文件夹cd myblog3、执行hexo init初始化博客   安装博客的包依赖  npm install   本地预览  1、hexo sever2、在本地访问http://localhost:4000/可以在本地预览博客的效果   生成静态文">
-<meta name="keywords" content="博客搭建">
+<meta name="description" content="函数的length属性 设置默认值的参数是尾参数 返回没有指定默认参数的参数的个数。   设置默认值的参数不是尾参数 返回默认参数前面没有指定默认参数的参数的个数。    函数的length属性，不包括 rest 参数this指向的固定化，并不是因为箭头函数内部有绑定this的机制，实际原因是箭头函数根本没有自己的this，导致内部的this就是外层代码块的this。正是因为它没有this，所以也">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用hexo搭建一个博客的步骤">
-<meta property="og:url" content="http://yoursite.com/2018/08/31/用hexo搭建一个博客的步骤/index.html">
+<meta property="og:title" content="es6——函数扩展">
+<meta property="og:url" content="http://yoursite.com/2019/03/19/es6——函数扩展/index.html">
 <meta property="og:site_name" content="罗小怡儿的博客">
-<meta property="og:description" content="安装hexo-cli npm install hexo-cli -g   初始化博客   1、新建一个文件夹，例如命名为myblog2、进入刚刚新建的文件夹cd myblog3、执行hexo init初始化博客   安装博客的包依赖  npm install   本地预览  1、hexo sever2、在本地访问http://localhost:4000/可以在本地预览博客的效果   生成静态文">
+<meta property="og:description" content="函数的length属性 设置默认值的参数是尾参数 返回没有指定默认参数的参数的个数。   设置默认值的参数不是尾参数 返回默认参数前面没有指定默认参数的参数的个数。    函数的length属性，不包括 rest 参数this指向的固定化，并不是因为箭头函数内部有绑定this的机制，实际原因是箭头函数根本没有自己的this，导致内部的this就是外层代码块的this。正是因为它没有this，所以也">
 <meta property="og:locale" content="中文">
-<meta property="og:updated_time" content="2018-09-06T09:01:51.000Z">
+<meta property="og:updated_time" content="2019-03-20T06:27:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="用hexo搭建一个博客的步骤">
-<meta name="twitter:description" content="安装hexo-cli npm install hexo-cli -g   初始化博客   1、新建一个文件夹，例如命名为myblog2、进入刚刚新建的文件夹cd myblog3、执行hexo init初始化博客   安装博客的包依赖  npm install   本地预览  1、hexo sever2、在本地访问http://localhost:4000/可以在本地预览博客的效果   生成静态文">
+<meta name="twitter:title" content="es6——函数扩展">
+<meta name="twitter:description" content="函数的length属性 设置默认值的参数是尾参数 返回没有指定默认参数的参数的个数。   设置默认值的参数不是尾参数 返回默认参数前面没有指定默认参数的参数的个数。    函数的length属性，不包括 rest 参数this指向的固定化，并不是因为箭头函数内部有绑定this的机制，实际原因是箭头函数根本没有自己的this，导致内部的this就是外层代码块的this。正是因为它没有this，所以也">
 
 
 
@@ -120,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/31/用hexo搭建一个博客的步骤/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/03/19/es6——函数扩展/"/>
 
 
 
 
 
-  <title>用hexo搭建一个博客的步骤 | 罗小怡儿的博客</title>
+  <title>es6——函数扩展 | 罗小怡儿的博客</title>
   
 
 
@@ -233,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/31/用hexo搭建一个博客的步骤/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/19/es6——函数扩展/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Luoxiaoyier~">
@@ -250,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">用hexo搭建一个博客的步骤</h1>
+          <h1 class="post-title" itemprop="name headline">es6——函数扩展</h1>
         
 
         <div class="post-meta">
@@ -262,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-31T12:04:25+08:00">
-                2018-08-31
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-19T14:35:13+08:00">
+                2019-03-19
               </time>
             
 
@@ -300,38 +299,17 @@
       
 
       
-        <ul>
-<li>安装hexo-cli<blockquote>
-<p><code>npm install hexo-cli -g</code></p>
+        <h3 id="函数的length属性"><a href="#函数的length属性" class="headerlink" title="函数的length属性"></a>函数的length属性</h3><ul>
+<li>设置默认值的参数是尾参数<blockquote>
+<p>返回没有指定默认参数的参数的个数。</p>
 </blockquote>
 </li>
-<li><p>初始化博客 </p>
-<blockquote>
-<p>1、新建一个文件夹，例如命名为myblog<br>2、进入刚刚新建的文件夹<code>cd myblog</code><br>3、执行<code>hexo init</code>初始化博客</p>
-</blockquote>
-</li>
-<li><p>安装博客的包依赖</p>
-<blockquote>
-<p><code>npm install</code></p>
-</blockquote>
-</li>
-<li><p>本地预览</p>
-<blockquote>
-<p>1、<code>hexo sever</code><br>2、在本地访问<code>http://localhost:4000/</code>可以在本地预览博客的效果</p>
-</blockquote>
-</li>
-<li><p>生成静态文件</p>
-<blockquote>
-<p><code>hexo g</code></p>
-</blockquote>
-</li>
-<li><p>将静态文件部署到github上</p>
-<blockquote>
-<p> <code>hexo d</code></p>
+<li>设置默认值的参数不是尾参数<blockquote>
+<p>返回默认参数前面没有指定默认参数的参数的个数。</p>
 </blockquote>
 </li>
 </ul>
-
+<h3 id="函数的length属性，不包括-rest-参数"><a href="#函数的length属性，不包括-rest-参数" class="headerlink" title="函数的length属性，不包括 rest 参数"></a>函数的length属性，不包括 rest 参数</h3><h3 id="this指向的固定化，并不是因为箭头函数内部有绑定this的机制，实际原因是箭头函数根本没有自己的this，导致内部的this就是外层代码块的this。正是因为它没有this，所以也就不能用作构造函数。"><a href="#this指向的固定化，并不是因为箭头函数内部有绑定this的机制，实际原因是箭头函数根本没有自己的this，导致内部的this就是外层代码块的this。正是因为它没有this，所以也就不能用作构造函数。" class="headerlink" title="this指向的固定化，并不是因为箭头函数内部有绑定this的机制，实际原因是箭头函数根本没有自己的this，导致内部的this就是外层代码块的this。正是因为它没有this，所以也就不能用作构造函数。"></a>this指向的固定化，并不是因为箭头函数内部有绑定this的机制，实际原因是箭头函数根本没有自己的this，导致内部的this就是外层代码块的this。正是因为它没有this，所以也就不能用作构造函数。</h3><h3 id="rest-参数之后不能再有其他参数（即只能是最后一个参数），否则会报错。"><a href="#rest-参数之后不能再有其他参数（即只能是最后一个参数），否则会报错。" class="headerlink" title="rest 参数之后不能再有其他参数（即只能是最后一个参数），否则会报错。"></a>rest 参数之后不能再有其他参数（即只能是最后一个参数），否则会报错。</h3>
       
     </div>
     
@@ -346,12 +324,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/博客搭建/" rel="tag"># 博客搭建</a>
-          
-        </div>
-      
 
       
       
@@ -361,8 +333,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/16/2018/" rel="next" title="2018">
-                <i class="fa fa-chevron-left"></i> 2018
+              <a href="/2019/01/24/前端面试题总结——事件篇/" rel="next" title="前端面试题总结——事件篇">
+                <i class="fa fa-chevron-left"></i> 前端面试题总结——事件篇
               </a>
             
           </div>
@@ -371,8 +343,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/08/31/hello-world/" rel="prev" title="再次开始">
-                再次开始 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/20/深刻理解定位/" rel="prev" title="深刻理解定位">
+                深刻理解定位 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -425,8 +397,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -486,6 +467,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数的length属性"><span class="nav-number">1.</span> <span class="nav-text">函数的length属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数的length属性，不包括-rest-参数"><span class="nav-number">2.</span> <span class="nav-text">函数的length属性，不包括 rest 参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#this指向的固定化，并不是因为箭头函数内部有绑定this的机制，实际原因是箭头函数根本没有自己的this，导致内部的this就是外层代码块的this。正是因为它没有this，所以也就不能用作构造函数。"><span class="nav-number">3.</span> <span class="nav-text">this指向的固定化，并不是因为箭头函数内部有绑定this的机制，实际原因是箭头函数根本没有自己的this，导致内部的this就是外层代码块的this。正是因为它没有this，所以也就不能用作构造函数。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rest-参数之后不能再有其他参数（即只能是最后一个参数），否则会报错。"><span class="nav-number">4.</span> <span class="nav-text">rest 参数之后不能再有其他参数（即只能是最后一个参数），否则会报错。</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

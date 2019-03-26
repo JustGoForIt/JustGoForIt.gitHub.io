@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Document   	 		var removeDuplicates = function(nums) { 		    let k = nums.length-1 		    let count = 0 		    for(let i=nums.length-1;i&amp;gt;=0;i--){ 		        if(nums[k]==nums[i]){ 		            coun">
+<meta name="description" content="实现一个左右固定300px中间自适应布局 	 	.left{ 		width: 170px; 		background: red; 		height: 170px; 		float: left; 	} 	.right{ 		margin-left: 170px; 		background: green; 		height: 170px; 	}">
 <meta property="og:type" content="article">
 <meta property="og:title" content="罗小怡儿的博客">
 <meta property="og:url" content="http://yoursite.com/2018/11/09/a/index.html">
 <meta property="og:site_name" content="罗小怡儿的博客">
-<meta property="og:description" content="Document   	 		var removeDuplicates = function(nums) { 		    let k = nums.length-1 		    let count = 0 		    for(let i=nums.length-1;i&amp;gt;=0;i--){ 		        if(nums[k]==nums[i]){ 		            coun">
+<meta property="og:description" content="实现一个左右固定300px中间自适应布局 	 	.left{ 		width: 170px; 		background: red; 		height: 170px; 		float: left; 	} 	.right{ 		margin-left: 170px; 		background: green; 		height: 170px; 	}">
 <meta property="og:locale" content="中文">
-<meta property="og:updated_time" content="2018-12-01T15:51:43.000Z">
+<meta property="og:updated_time" content="2019-03-21T08:29:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="罗小怡儿的博客">
-<meta name="twitter:description" content="Document   	 		var removeDuplicates = function(nums) { 		    let k = nums.length-1 		    let count = 0 		    for(let i=nums.length-1;i&amp;gt;=0;i--){ 		        if(nums[k]==nums[i]){ 		            coun">
+<meta name="twitter:description" content="实现一个左右固定300px中间自适应布局 	 	.left{ 		width: 170px; 		background: red; 		height: 170px; 		float: left; 	} 	.right{ 		margin-left: 170px; 		background: green; 		height: 170px; 	}">
 
 
 
@@ -303,28 +303,31 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>实现一个左右固定300px中间自适应布局</title>
+	<style type="text/css">
+	.left{
+		width: 170px;
+		background: red;
+		height: 170px;
+		float: left;
+	}
+	.right{
+		margin-left: 170px;
+		background: green;
+		height: 170px;
+	}
+	</style>
 </head>
 <body>
-	<script type="text/javascript">
-		var removeDuplicates = function(nums) {
-		    let k = nums.length-1
-		    let count = 0
-		    for(let i=nums.length-1;i>=0;i--){
-		        if(nums[k]==nums[i]){
-		            count++
-		            if(count>2){
-		                nums.splice(i,1)
-		            }
-		        }else{
-		           count = 0
-		           k = i     
-		        }
-		    }
-		    return nums.length
-		};
-		removeDuplicates([1,1,1,2,2,3])
-	</script>
+	<div class="wrapper">
+
+       <div class="left">
+
+       </div>
+		<div class="right">
+
+		</div>
+	</div>
 </body>
 </html>
       
@@ -430,7 +433,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

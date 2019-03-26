@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="flex container123456789101112display:flex;//主轴方向flex-direction:row; //默认值 主轴方向 左——&amp;gt;右 flex-direction:column; //主轴方向 上——&amp;gt;下flex-direction:row-reverse; //主轴方向 右——&amp;gt;左flex-direction:column-reverse;">
+<meta name="description" content="flex布局flex containerdisplay:flex;flex-direction 主轴的方向 row; // 默认值 表示主轴方向 左——&amp;gt;右  column; // 表示主轴方向 上——&amp;gt;下 row-reverse; // 表示主轴方向 右——&amp;gt;左 column-reverse; // 表示主轴方向 下——&amp;gt;上  justify-content 主轴的对齐方">
 <meta property="og:type" content="article">
 <meta property="og:title" content="flex布局">
 <meta property="og:url" content="http://yoursite.com/2018/11/15/flex布局/index.html">
 <meta property="og:site_name" content="罗小怡儿的博客">
-<meta property="og:description" content="flex container123456789101112display:flex;//主轴方向flex-direction:row; //默认值 主轴方向 左——&amp;gt;右 flex-direction:column; //主轴方向 上——&amp;gt;下flex-direction:row-reverse; //主轴方向 右——&amp;gt;左flex-direction:column-reverse;">
+<meta property="og:description" content="flex布局flex containerdisplay:flex;flex-direction 主轴的方向 row; // 默认值 表示主轴方向 左——&amp;gt;右  column; // 表示主轴方向 上——&amp;gt;下 row-reverse; // 表示主轴方向 右——&amp;gt;左 column-reverse; // 表示主轴方向 下——&amp;gt;上  justify-content 主轴的对齐方">
 <meta property="og:locale" content="中文">
-<meta property="og:updated_time" content="2018-11-15T15:58:27.000Z">
+<meta property="og:updated_time" content="2019-03-26T02:35:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="flex布局">
-<meta name="twitter:description" content="flex container123456789101112display:flex;//主轴方向flex-direction:row; //默认值 主轴方向 左——&amp;gt;右 flex-direction:column; //主轴方向 上——&amp;gt;下flex-direction:row-reverse; //主轴方向 右——&amp;gt;左flex-direction:column-reverse;">
+<meta name="twitter:description" content="flex布局flex containerdisplay:flex;flex-direction 主轴的方向 row; // 默认值 表示主轴方向 左——&amp;gt;右  column; // 表示主轴方向 上——&amp;gt;下 row-reverse; // 表示主轴方向 右——&amp;gt;左 column-reverse; // 表示主轴方向 下——&amp;gt;上  justify-content 主轴的对齐方">
 
 
 
@@ -299,11 +299,42 @@
       
 
       
-        <h3 id="flex-container"><a href="#flex-container" class="headerlink" title="flex container"></a>flex container</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">display:flex;</span><br><span class="line">//主轴方向</span><br><span class="line">flex-direction:row; //默认值 主轴方向 左——&gt;右 </span><br><span class="line">flex-direction:column; //主轴方向 上——&gt;下</span><br><span class="line">flex-direction:row-reverse; //主轴方向 右——&gt;左</span><br><span class="line">flex-direction:column-reverse; //主轴方向 下——&gt;上</span><br><span class="line">//主轴的对齐方式</span><br><span class="line">justify-content:flex-start/flex-end/center/space-betten(平均分布)/space-around(左右两边等距分布)</span><br><span class="line">//交叉轴的对齐方式</span><br><span class="line">align-items:flex-start/flex-end/center/stretch[在没有设置高度的时候，在交叉轴上占满]/baceline</span><br><span class="line">//换行</span><br><span class="line">flex-wrap:no-wrap/wrap/</span><br></pre></td></tr></table></figure>
+        <h3 id="flex布局"><a href="#flex布局" class="headerlink" title="flex布局"></a>flex布局</h3><h3 id="flex-container"><a href="#flex-container" class="headerlink" title="flex container"></a>flex container</h3><h4 id="display-flex"><a href="#display-flex" class="headerlink" title="display:flex;"></a>display:flex;</h4><h4 id="flex-direction-主轴的方向"><a href="#flex-direction-主轴的方向" class="headerlink" title="flex-direction 主轴的方向"></a>flex-direction 主轴的方向</h4><ol>
+<li>row; // 默认值 表示主轴方向 左——&gt;右 </li>
+<li>column; // 表示主轴方向 上——&gt;下</li>
+<li>row-reverse; // 表示主轴方向 右——&gt;左</li>
+<li>column-reverse; // 表示主轴方向 下——&gt;上</li>
+</ol>
+<h4 id="justify-content-主轴的对齐方式"><a href="#justify-content-主轴的对齐方式" class="headerlink" title="justify-content 主轴的对齐方式"></a>justify-content 主轴的对齐方式</h4><ol>
+<li>flex-start // 起点对齐</li>
+<li>flex-end  // 终点对齐</li>
+<li>center  // 居中对齐</li>
+<li>space-betten // 平均分布</li>
+<li>space-around // 左右两边等距分布     </li>
+</ol>
+<h4 id="align-items-交叉轴的对齐方式"><a href="#align-items-交叉轴的对齐方式" class="headerlink" title="align-items 交叉轴的对齐方式"></a>align-items 交叉轴的对齐方式</h4><ol>
+<li>flex-start // 起点对齐</li>
+<li>flex-end // 终点对齐</li>
+<li>center // 居中对齐</li>
+<li>stretch // 在没有给flex item设置高度的时候，flex imte会在交叉轴上占满，如果给flex item设置的高度，那么这个属性不生效。</li>
+<li>baceline //  按照flex item中的文字基线对齐。</li>
+</ol>
+<h4 id="flex-wrap-换行"><a href="#flex-wrap-换行" class="headerlink" title="flex-wrap 换行"></a>flex-wrap 换行</h4><blockquote>
+<p>换行的机制：如果总元素的宽度和高度大于设置的总宽度和总高度，又没有设置换行的方式，flex会让每个元素平均分配总宽度和总高度。</p>
+</blockquote>
+<ol>
+<li>no-wrap //默认值 不换行</li>
+<li>wrap //换行</li>
+</ol>
+<ul>
+<li>换行的元素会在交叉轴上居中,所以就可能出现：和换行之前的行之间出现间距的问题：</li>
+<li>解决方案：通过设置宽或者高解决。</li>
+</ul>
 <h4 id="row-reverse会靠右对齐，而column-reverse不会靠下对齐的原因"><a href="#row-reverse会靠右对齐，而column-reverse不会靠下对齐的原因" class="headerlink" title="row-reverse会靠右对齐，而column-reverse不会靠下对齐的原因"></a>row-reverse会靠右对齐，而column-reverse不会靠下对齐的原因</h4><blockquote>
 <p>因为整个容器的高度和包含内容块的高度一致，而横向上总宽度是大于包含块的宽度的。</p>
 </blockquote>
-<h3 id="flex-item"><a href="#flex-item" class="headerlink" title="flex item"></a>flex item</h3>
+<h3 id="flex-item"><a href="#flex-item" class="headerlink" title="flex item"></a>flex item</h3><p><a href="http://htmlpreview.github.io/?https://github.com/JustGoForIt/layout/blob/master/flexbox.html" target="_blank" rel="noopener">点我查看flex布局实例</a></p>
+
       
     </div>
     
@@ -416,7 +447,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -471,7 +502,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-container"><span class="nav-number">1.</span> <span class="nav-text">flex container</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#row-reverse会靠右对齐，而column-reverse不会靠下对齐的原因"><span class="nav-number">1.1.</span> <span class="nav-text">row-reverse会靠右对齐，而column-reverse不会靠下对齐的原因</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-item"><span class="nav-number">2.</span> <span class="nav-text">flex item</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#flex布局"><span class="nav-number">1.</span> <span class="nav-text">flex布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-container"><span class="nav-number">2.</span> <span class="nav-text">flex container</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#display-flex"><span class="nav-number">2.1.</span> <span class="nav-text">display:flex;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#flex-direction-主轴的方向"><span class="nav-number">2.2.</span> <span class="nav-text">flex-direction 主轴的方向</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#justify-content-主轴的对齐方式"><span class="nav-number">2.3.</span> <span class="nav-text">justify-content 主轴的对齐方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#align-items-交叉轴的对齐方式"><span class="nav-number">2.4.</span> <span class="nav-text">align-items 交叉轴的对齐方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#flex-wrap-换行"><span class="nav-number">2.5.</span> <span class="nav-text">flex-wrap 换行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#row-reverse会靠右对齐，而column-reverse不会靠下对齐的原因"><span class="nav-number">2.6.</span> <span class="nav-text">row-reverse会靠右对齐，而column-reverse不会靠下对齐的原因</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-item"><span class="nav-number">3.</span> <span class="nav-text">flex item</span></a></li></ol></div>
             
 
           </div>
