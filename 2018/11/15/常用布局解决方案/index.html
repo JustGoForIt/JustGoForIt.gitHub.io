@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="中文">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="表格布局实现方式一：用table标签形式实现table布局12345678910111213141516171819202122&amp;lt;style type=&amp;quot;text/css&amp;quot;&amp;gt;	table&amp;#123;		width: 800px;		height: 200px;		border-collapse: collapse;/*合并表格边框*/	&amp;#125;	.red&amp;#12">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常用布局解决方案">
+<meta property="og:url" content="http://yoursite.com/2018/11/15/常用布局解决方案/index.html">
+<meta property="og:site_name" content="罗小怡儿的博客">
+<meta property="og:description" content="表格布局实现方式一：用table标签形式实现table布局12345678910111213141516171819202122&amp;lt;style type=&amp;quot;text/css&amp;quot;&amp;gt;	table&amp;#123;		width: 800px;		height: 200px;		border-collapse: collapse;/*合并表格边框*/	&amp;#125;	.red&amp;#12">
+<meta property="og:locale" content="中文">
+<meta property="og:updated_time" content="2019-03-27T06:48:13.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="常用布局解决方案">
+<meta name="twitter:description" content="表格布局实现方式一：用table标签形式实现table布局12345678910111213141516171819202122&amp;lt;style type=&amp;quot;text/css&amp;quot;&amp;gt;	table&amp;#123;		width: 800px;		height: 200px;		border-collapse: collapse;/*合并表格边框*/	&amp;#125;	.red&amp;#12">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/11/15/常用布局解决方案/"/>
+
+
+
+
+
+  <title>常用布局解决方案 | 罗小怡儿的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="中文">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">罗小怡儿的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">欢迎你</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/15/常用布局解决方案/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Luoxiaoyier~">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="罗小怡儿的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">常用布局解决方案</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-15T23:57:55+08:00">
+                2018-11-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="表格布局"><a href="#表格布局" class="headerlink" title="表格布局"></a>表格布局</h3><h4 id="实现方式一：用table标签形式实现table布局"><a href="#实现方式一：用table标签形式实现table布局" class="headerlink" title="实现方式一：用table标签形式实现table布局"></a>实现方式一：用table标签形式实现table布局</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">	table&#123;</span><br><span class="line">		width: 800px;</span><br><span class="line">		height: 200px;</span><br><span class="line">		border-collapse: collapse;/*合并表格边框*/</span><br><span class="line">	&#125;</span><br><span class="line">	.red&#123;</span><br><span class="line">		background: red;</span><br><span class="line">	&#125;</span><br><span class="line">	.blue&#123;</span><br><span class="line">		background: blue;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">   &lt;h1&gt;我是用table标签形式实现的table布局&lt;/h1&gt;</span><br><span class="line">&lt;table&gt;</span><br><span class="line">	&lt;tr&gt;</span><br><span class="line">		&lt;td class=&quot;red&quot;&gt;&lt;div&gt;我是table的第一列&lt;/div&gt;&lt;/td&gt;</span><br><span class="line">		&lt;td class=&quot;blue&quot;&gt;我是table的第二列&lt;/td&gt;</span><br><span class="line">		&lt;td class=&quot;red&quot;&gt;我是table的第三列&lt;/td&gt;</span><br><span class="line">	&lt;/tr&gt;</span><br><span class="line">&lt;/table&gt;</span><br></pre></td></tr></table></figure>
+<h6 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h6><ul>
+<li>默认情况下会平均分配列宽。</li>
+<li>设置其中一列的宽度，其他列宽度会自动平均分配。可以方便的实现一侧固定，一侧自适应布局。</li>
+<li>每个表格中的内容会自动垂直居中。</li>
+</ul>
+<h4 id="实现方式二：用css实现table布局"><a href="#实现方式二：用css实现table布局" class="headerlink" title="实现方式二：用css实现table布局"></a>实现方式二：用css实现table布局</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">   &lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">  		.table&#123;</span><br><span class="line">		display: table;</span><br><span class="line">		width: 800px;</span><br><span class="line">		height: 200px;</span><br><span class="line">		margin-top: 10px;</span><br><span class="line">	&#125;</span><br><span class="line">	.table-row&#123;</span><br><span class="line">		display: table-row;</span><br><span class="line">	&#125;</span><br><span class="line">	.table-cell&#123;</span><br><span class="line">		display: table-cell;</span><br><span class="line">	&#125; </span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">   &lt;h1&gt;我是css式实现的table布局&lt;/h1&gt;</span><br><span class="line">&lt;div class=&quot;table&quot;&gt;</span><br><span class="line">	&lt;div class=&quot;table-row&quot;&gt;</span><br><span class="line">		&lt;div class=&quot;red table-cell&quot;&gt;我是table的第一列&lt;/div&gt;</span><br><span class="line">		&lt;div class=&quot;blue table-cell&quot;&gt;我是table的第二列&lt;/div&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="优点：-1"><a href="#优点：-1" class="headerlink" title="优点："></a>优点：</h5><ul>
+<li>默认情况下会平均分配列宽。</li>
+<li>设置其中一列的宽度，其他列宽度会自动平均分配。可以方便的实现一侧固定，一侧自适应布局。<h5 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h5></li>
+<li>每个表格中的内容不会自动垂直居中了。</li>
+</ul>
+<p><a href="http://htmlpreview.github.io/?https://github.com/JustGoForIt/layout/blob/master/%E5%B8%83%E5%B1%80%E7%9A%84%E6%96%B9%E6%A1%88/table.html" target="_blank" rel="noopener">点我查看效果</a></p>
+<h3 id="flex布局"><a href="#flex布局" class="headerlink" title="flex布局"></a>flex布局</h3><h4 id="flex-container"><a href="#flex-container" class="headerlink" title="flex container"></a>flex container</h4><h4 id="display-flex"><a href="#display-flex" class="headerlink" title="display:flex;"></a>display:flex;</h4><h4 id="flex-direction-主轴的方向"><a href="#flex-direction-主轴的方向" class="headerlink" title="flex-direction 主轴的方向"></a>flex-direction 主轴的方向</h4><ol>
+<li>row; // 默认值 表示主轴方向 左——&gt;右 </li>
+<li>column; // 表示主轴方向 上——&gt;下</li>
+<li>row-reverse; // 表示主轴方向 右——&gt;左</li>
+<li>column-reverse; // 表示主轴方向 下——&gt;上</li>
+</ol>
+<h4 id="justify-content-主轴的对齐方式"><a href="#justify-content-主轴的对齐方式" class="headerlink" title="justify-content 主轴的对齐方式"></a>justify-content 主轴的对齐方式</h4><ol>
+<li>flex-start // 起点对齐</li>
+<li>flex-end  // 终点对齐</li>
+<li>center  // 居中对齐</li>
+<li>space-betten // 平均分布</li>
+<li>space-around // 左右两边等距分布     </li>
+</ol>
+<h4 id="align-items-交叉轴的对齐方式"><a href="#align-items-交叉轴的对齐方式" class="headerlink" title="align-items 交叉轴的对齐方式"></a>align-items 交叉轴的对齐方式</h4><ol>
+<li>flex-start // 起点对齐</li>
+<li>flex-end // 终点对齐</li>
+<li>center // 居中对齐</li>
+<li>stretch // 在没有给flex item设置高度的时候，flex imte会在交叉轴上占满，如果给flex item设置的高度，那么这个属性不生效。</li>
+<li>baceline //  按照flex item中的文字基线对齐。</li>
+</ol>
+<h4 id="flex-wrap-换行"><a href="#flex-wrap-换行" class="headerlink" title="flex-wrap 换行"></a>flex-wrap 换行</h4><blockquote>
+<p>换行的机制：如果总元素的宽度和高度大于设置的总宽度和总高度，又没有设置换行的方式，flex会让每个元素平均分配总宽度和总高度。</p>
+</blockquote>
+<ol>
+<li>no-wrap //默认值 不换行</li>
+<li>wrap //换行</li>
+</ol>
+<ul>
+<li>换行的元素会在交叉轴上居中,所以就可能出现：和换行之前的行之间出现间距的问题：</li>
+<li>解决方案：通过设置宽或者高解决。</li>
+</ul>
+<h4 id="row-reverse会靠右对齐，而column-reverse不会靠下对齐的原因"><a href="#row-reverse会靠右对齐，而column-reverse不会靠下对齐的原因" class="headerlink" title="row-reverse会靠右对齐，而column-reverse不会靠下对齐的原因"></a>row-reverse会靠右对齐，而column-reverse不会靠下对齐的原因</h4><blockquote>
+<p>因为整个容器的高度和包含内容块的高度一致，而横向上总宽度是大于包含块的宽度的。</p>
+</blockquote>
+<h4 id="flex-item"><a href="#flex-item" class="headerlink" title="flex item"></a>flex item</h4><p><a href="http://htmlpreview.github.io/?https://github.com/JustGoForIt/layout/blob/master/%E5%B8%83%E5%B1%80%E7%9A%84%E6%96%B9%E6%A1%88/flexbox.html" target="_blank" rel="noopener">点我查看flex布局实例</a></p>
+<h3 id="inline-block布局"><a href="#inline-block布局" class="headerlink" title="inline-block布局"></a>inline-block布局</h3> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">	&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">	.container&#123;</span><br><span class="line">		width: 800px;</span><br><span class="line">		height: 200px;</span><br><span class="line">		background: yellow;</span><br><span class="line">		font-size: 0;</span><br><span class="line">	&#125;</span><br><span class="line">	.left&#123;</span><br><span class="line">		width: 200px;</span><br><span class="line">		height: 200px;</span><br><span class="line">		background: red;</span><br><span class="line">		display: inline-block;</span><br><span class="line">		font-size: 20px;</span><br><span class="line">	&#125;</span><br><span class="line">	.right&#123;</span><br><span class="line">		width: 600px;</span><br><span class="line">		height: 200px;</span><br><span class="line">		background: blue;</span><br><span class="line">		display: inline-block;</span><br><span class="line">		font-size: 20px;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div class=&quot;container&quot;&gt;</span><br><span class="line">	&lt;div class=&quot;left&quot;&gt;</span><br><span class="line">		我是左边</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">	&lt;div class=&quot;right&quot;&gt;</span><br><span class="line">		我是右边</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h5><ol>
+<li>块与块之间会出现间隙</li>
+</ol>
+<ul>
+<li>原因: 因为文字和文字之间会有间隙</li>
+<li>解决方案: 将父元素的<code>font-size</code>设置为0</li>
+</ul>
+<ol start="2">
+<li>不适合宽度自适应的布局</li>
+</ol>
+<h5 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h5><ul>
+<li>不会想浮动一样对其他元素产生影响</li>
+<li>比较适合定宽的布局<br><a href="http://htmlpreview.github.io/?https://github.com/JustGoForIt/layout/blob/master/%E5%B8%83%E5%B1%80%E7%9A%84%E6%96%B9%E6%A1%88/inline-block.html" target="_blank" rel="noopener">点我查看inline-block布局实例</a></li>
+</ul>
+<h3 id="响应式布局"><a href="#响应式布局" class="headerlink" title="响应式布局"></a>响应式布局</h3><h4 id="主要方法："><a href="#主要方法：" class="headerlink" title="主要方法："></a>主要方法：</h4><ol>
+<li>隐藏、折行、自适应空间。</li>
+<li>rem/viewport/media query</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/09/a/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/23/CSS中的动画/" rel="prev" title="CSS中的动画">
+                CSS中的动画 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Luoxiaoyier~</p>
+              <p class="site-description motion-element" itemprop="description">这是一个个人技术博客，总结一些前端学习的知识。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#表格布局"><span class="nav-number">1.</span> <span class="nav-text">表格布局</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#实现方式一：用table标签形式实现table布局"><span class="nav-number">1.1.</span> <span class="nav-text">实现方式一：用table标签形式实现table布局</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#优点："><span class="nav-number">1.1.0.1.</span> <span class="nav-text">优点：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现方式二：用css实现table布局"><span class="nav-number">1.2.</span> <span class="nav-text">实现方式二：用css实现table布局</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#优点：-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">优点：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#缺点："><span class="nav-number">1.2.2.</span> <span class="nav-text">缺点：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex布局"><span class="nav-number">2.</span> <span class="nav-text">flex布局</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#flex-container"><span class="nav-number">2.1.</span> <span class="nav-text">flex container</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#display-flex"><span class="nav-number">2.2.</span> <span class="nav-text">display:flex;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#flex-direction-主轴的方向"><span class="nav-number">2.3.</span> <span class="nav-text">flex-direction 主轴的方向</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#justify-content-主轴的对齐方式"><span class="nav-number">2.4.</span> <span class="nav-text">justify-content 主轴的对齐方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#align-items-交叉轴的对齐方式"><span class="nav-number">2.5.</span> <span class="nav-text">align-items 交叉轴的对齐方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#flex-wrap-换行"><span class="nav-number">2.6.</span> <span class="nav-text">flex-wrap 换行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#row-reverse会靠右对齐，而column-reverse不会靠下对齐的原因"><span class="nav-number">2.7.</span> <span class="nav-text">row-reverse会靠右对齐，而column-reverse不会靠下对齐的原因</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#flex-item"><span class="nav-number">2.8.</span> <span class="nav-text">flex item</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#inline-block布局"><span class="nav-number">3.</span> <span class="nav-text">inline-block布局</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#缺点"><span class="nav-number">3.0.1.</span> <span class="nav-text">缺点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#优点"><span class="nav-number">3.0.2.</span> <span class="nav-text">优点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#响应式布局"><span class="nav-number">4.</span> <span class="nav-text">响应式布局</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#主要方法："><span class="nav-number">4.1.</span> <span class="nav-text">主要方法：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Luoxiaoyier~</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
